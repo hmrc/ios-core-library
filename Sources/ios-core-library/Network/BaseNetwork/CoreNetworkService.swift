@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 HM Revenue & Customs
+ * Copyright 2021 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,11 +18,14 @@ import Foundation
 public typealias NetworkHandler = ((Result<MobileCore.HTTP.Response, MobileCore.Network.ServiceError>) -> Void)
 
 public protocol CoreNetworkService {
-    var auditDelegate: NetworkServiceAuditDelegate! { get set }
-    var analyticsDelegate: NetworkServiceAnalyticsDelegate! { get set }
+    var responseHandler: CoreResponseHandler! { get set }
 
     func data(request: MobileCore.HTTP.RequestBuilder,
               sessionType: MobileCore.Network.SessionType,
+              _ handler: @escaping NetworkHandler)
+    func data(request: MobileCore.HTTP.RequestBuilder,
+              sessionType: MobileCore.Network.SessionType,
+              attempt: Int,
               _ handler: @escaping NetworkHandler)
     func cancelRequests()
 }
@@ -37,11 +40,15 @@ public protocol Endpoint {
 }
 
 public protocol NetworkServiceAuditDelegate: class {
-    func trackAuditEventIfRequired(request: URLRequest, data: Data, response: URLResponse)
+    func trackAuditEventIfRequired(request: MobileCore.HTTP.RequestBuilder, data: Data, response: URLResponse)
 }
 
 public protocol NetworkServiceAnalyticsDelegate: class {
     func trackAnalyticEvent(eventCategory: String, eventAction: String, eventLabel: String?, eventValue: NSNumber?)
+}
+
+public protocol NetworkServiceAuthenticationDelegate: class {
+    func didReceive401() -> Bool
 }
 
 open class APIService: CoreNetworkServiceInjected {
@@ -90,63 +97,17 @@ extension MobileCore.Network {
         }
     }
 
-    public static func configure(analyticsDelegate: NetworkServiceAnalyticsDelegate, auditDelegate: NetworkServiceAuditDelegate) {
+    public static func configure(responseHandler: CoreResponseHandler) {
         var networkService: CoreNetworkService = MobileCore.Injection.Service.network.injectedObject()
-        networkService.analyticsDelegate = analyticsDelegate
-        networkService.auditDelegate = auditDelegate
+        networkService.responseHandler = responseHandler
     }
 
     open class Service: BaseNetworkSpinnerConsumer, CoreNetworkService {
-        public weak var auditDelegate: NetworkServiceAuditDelegate!
-        public weak var analyticsDelegate: NetworkServiceAnalyticsDelegate!
-        let errorDomain = "uk.gov.hmrc"
-
-        // swiftlint:disable:next cyclomatic_complexity
-        open func handle(request: URLRequest,
-                         response: MobileCore.HTTP.Response,
-                         _ handler: @escaping (Result<MobileCore.HTTP.Response, ServiceError>) -> Void) {
-            do {
-                let urlResponse = response.response!
-                let statusCode = urlResponse.statusCode
-                let error = NSError(domain: errorDomain, code: statusCode, userInfo: nil)
-                self.trackAuditEventIfRequired(request: request, data: response.value, response: urlResponse)
-                switch statusCode {
-                case 410:
-                    throw self.handle410(request: request, response: response)
-                case 200..<400:
-                    self.handle200To399(request: request, response: response, handler)
-                case 401, 403:
-                    throw self.handle401And403(request: request, response: response)
-                case 404:
-                    throw self.handle404(request: request, response: response)
-                case 423:
-                    throw self.handle423(request: request, response: response)
-                case 400..<500:
-                    throw self.handle4XX(request: request, response: response, error: error)
-                case 503:
-                    throw self.handle503(request: request, response: response)
-                case 521:
-                    throw self.handle521(request: request, response: response)
-                case 500...599:
-                    throw self.handle500To599(request: request, response: response, error: error)
-                default:
-                    throw self.handleAnyOtherError(request: request, response: response, error: error)
-                }
-            } catch {
-                if let error = error as? ServiceError {
-                    handler(.failure(error))
-                } else {
-                    handler(.failure(ServiceError.unrecoverable(error: error)))
-                }
-            }
-        }
+        public var responseHandler: CoreResponseHandler!
 
         var pendingRequests = [MobileCore.HTTP.RequestBuilder]()
 
-        open func data(
-                request: MobileCore.HTTP.RequestBuilder,
-                sessionType: MobileCore.Network.SessionType,
-                _ handler: @escaping (Result<MobileCore.HTTP.Response, ServiceError>) -> Void) {
+        open func data(request: MobileCore.HTTP.RequestBuilder, sessionType: MobileCore.Network.SessionType, attempt: Int, _ handler: @escaping NetworkHandler) {
             //need to store a ref to the builder as the build process is async and the method that called data(request:_:) will probably
             //have fallen out of scope by the time this is called
             pendingRequests.append(request)
@@ -161,16 +122,16 @@ extension MobileCore.Network {
                 }
                 mainThread {
                     switch result {
-                    case let .success(request):
-                        self.showSpinnerIfRequiredForURL(request.url!)
-                        self.coreHTTPService.send(request, sessionType: sessionType, { (result) in
+                    case let .success(req):
+                        self.showSpinnerIfRequiredForURL(req.url!)
+                        self.coreHTTPService.send(req, sessionType: sessionType, { (result) in
                             mainThread {
-                                self.hideSpinnerIfRequiredForURL(request.url!)
+                                self.hideSpinnerIfRequiredForURL(req.url!)
                                 switch result {
                                 case let .success(response):
-                                    self.handle(request: request, response: response, handler)
+                                    self.responseHandler.handle(request: request, response: response, attempt: attempt, handler)
                                 case let .failure(error):
-                                    let error = self.handleAnyOtherError(request: request, response: nil, error: error as NSError)
+                                    let error = self.responseHandler.handleError(request: request, response: nil, attempt: attempt, error: error as NSError)
                                     handler(.failure(error))
                                 }
                             }
@@ -182,96 +143,16 @@ extension MobileCore.Network {
                 }
             }
         }
+        
+        open func data(
+                request: MobileCore.HTTP.RequestBuilder,
+                sessionType: MobileCore.Network.SessionType,
+                _ handler: @escaping (Result<MobileCore.HTTP.Response, ServiceError>) -> Void) {
+            self.data(request: request, sessionType: sessionType, attempt: 0, handler)
+        }
 
         open func cancelRequests() {
             coreHTTPService.cancelRequests()
-        }
-
-        // MARK: - Case Handling
-
-        func handle200To399(
-                request: URLRequest,
-                response: MobileCore.HTTP.Response,
-                _ handler: @escaping (Result<MobileCore.HTTP.Response, ServiceError>) -> Void) {
-            handler(.success(response))
-        }
-
-        func handle401And403(request: URLRequest, response: MobileCore.HTTP.Response) -> ServiceError {
-            trackAnalyticEvent(eventCategory: "errors", eventAction: "forbidden", eventLabel: "403 forbidden")
-            return .logout
-        }
-
-        func handle404(request: URLRequest, response: MobileCore.HTTP.Response) -> ServiceError {
-            return .notFound
-        }
-
-        func handle4XX(request: URLRequest, response: MobileCore.HTTP.Response, error: NSError) -> ServiceError {
-            return .unrecoverable(error: error)
-        }
-
-        func handle423(request: URLRequest, response: MobileCore.HTTP.Response) -> ServiceError {
-            return .mci
-        }
-
-        func handle410(request: URLRequest, response: MobileCore.HTTP.Response) -> ServiceError {
-            return .deceased
-        }
-
-        ///Shuttering for core (OLD needs to go)
-        func handle503(request: URLRequest, response: MobileCore.HTTP.Response) -> ServiceError {
-            let shutteringError = ServiceError.shuttered(ShutteredModel(
-                    title: "Sorry, there is a problem with the service", message: "Try again later."))
-            return shutteringError
-        }
-
-        func handle521(request: URLRequest, response: MobileCore.HTTP.Response) -> ServiceError {
-            do {
-                var model = try JSONDecoder().decode(ShutteredModel.self, from: response.value)
-                let defaultTitle = ShutteredModel.default.title
-                let defaultMessage = ShutteredModel.default.message
-                let title = model.title.isEmpty ? defaultTitle : model.title
-                let message = model.message.isEmpty ? defaultMessage : model.message
-                model = ShutteredModel(title: title, message: message)
-                let shutteringError = ServiceError.shuttered(model)
-                return shutteringError
-            } catch {
-                return .shuttered(.default)
-            }
-        }
-
-        func handle500To599(request: URLRequest, response: MobileCore.HTTP.Response, error: NSError) -> ServiceError {
-            return .retryable(error: error)
-        }
-
-        func handleAnyOtherError(request: URLRequest, response: MobileCore.HTTP.Response?, error: NSError) -> ServiceError {
-            switch error.domain {
-            case "cfNetworkDomain", "NSURLErrorDomain":
-                return ServiceError.internetConnectivityIssue(error: error)
-            default:
-                return .unrecoverable(error: error)
-            }
-        }
-
-        // MARK: - Helpers
-        func trackAnalyticEvent(eventCategory: String, eventAction: String, eventLabel: String?, eventValue: NSNumber? = nil) {
-            guard let analyticsDelegate = analyticsDelegate else {
-                Log.info(message: "No analytics delegate setup! Call Network.configure(analyticsDelegate:, auditDelegate:)")
-                return
-            }
-            analyticsDelegate.trackAnalyticEvent(
-                    eventCategory: eventCategory,
-                    eventAction: eventAction,
-                    eventLabel: eventLabel,
-                    eventValue: eventValue
-            )
-        }
-
-        private func trackAuditEventIfRequired(request: URLRequest, data: Data, response: URLResponse) {
-            guard let auditDelegate = auditDelegate else {
-                Log.info(message: "No audit delegate setup! Call Network.configure(analyticsDelegate:, auditDelegate:)")
-                return
-            }
-            auditDelegate.trackAuditEventIfRequired(request: request, data: data, response: response)
         }
     }
 }

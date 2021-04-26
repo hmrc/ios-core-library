@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Changed
+- Response Handling is now handled by a `CoreResponseHandler` instead of the `CoreNetworkService` - allowing apps that use this library the ability to override default response handling (e.g. to provide custom 401 handling).
 
 ## [2.2.0] - 2021-01-05
 - Added per request custom caching policy option
