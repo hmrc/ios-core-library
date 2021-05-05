@@ -1,6 +1,9 @@
 
 # iOS Core Library
 
+[![Build Status](https://app.bitrise.io/app/87e3e9b4bbc67fdf/status.svg?token=7zkTATaU7BBDnGwm6LoXAA)](https://app.bitrise.io/app/87e3e9b4bbc67fdf)
+![swift-pm](https://img.shields.io/badge/SwiftPM-Compatible-success.svg)
+
 Library for sharing lower level business code between various cross-gov applications.
 
 # Requirements
@@ -10,12 +13,10 @@ Library for sharing lower level business code between various cross-gov applicat
 
 # Installation
 
-## Carthage
-
-Carthage is a decentralised dependency manager that builds your dependencies and provides you with binary frameworks. To integrate the core library into your Xcode project using Carthage, specify it in your Cartfile:
-
+### Swift Package Manager
+```swift
+https://github.com/hmrc/ios-core-library
 ```
-github "hmrc/ios-core-library"
 ```
 
 # Usage
@@ -32,10 +33,3 @@ Our fastlane [README](https://github.com/hmrc/ios-core-library/tree/master/fastl
 ### SwiftLint
 
 We use [SwiftLint](https://github.com/realm/SwiftLint) to enforce Swift style and conventions. Our custom rules can be found in our [.swiftlint.yml](https://github.com/hmrc/ios-core-library/blob/master/.swiftlint.yml).
-
-### Carthage
-
-We use [Carthage](https://github.com/Carthage/Carthage) for dependency management.
-
-- [ ] Add support for SPM
-
