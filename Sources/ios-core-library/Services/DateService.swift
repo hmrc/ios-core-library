@@ -21,7 +21,7 @@ public protocol DateService {
     var utcTimeZone: String { get }
 }
 
-extension MobileCore.Date {
+public extension MobileCore.Date {
     open class Service: DateService {
         public var currentDate: Date {
             return Date()
