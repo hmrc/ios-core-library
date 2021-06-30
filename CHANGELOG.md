@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- Added descendantButtonWithAccessibilityLabel helper
 
 ## [2.3.0] - 2021-04-26
 ### Changed
