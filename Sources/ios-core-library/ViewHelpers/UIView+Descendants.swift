@@ -72,7 +72,7 @@ extension UIView {
     }
 
     @discardableResult
-    func descendantButtonWith(accessibilityLabel: String) -> UIButton? {
+    public func descendantButtonWith(accessibilityLabel: String) -> UIButton? {
         if let self = self as? UIButton {
             if self.accessibilityLabel == accessibilityLabel { return self }
         } else {
