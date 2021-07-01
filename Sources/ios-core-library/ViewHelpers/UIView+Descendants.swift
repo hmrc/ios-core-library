@@ -70,4 +70,18 @@ extension UIView {
         }
         return nil
     }
+
+    @discardableResult
+    public func descendantButtonWith(accessibilityLabel: String) -> UIButton? {
+        if let self = self as? UIButton {
+            if self.accessibilityLabel == accessibilityLabel { return self }
+        } else {
+            for subview in subviews {
+                if let label = subview.descendantButtonWith(accessibilityLabel: accessibilityLabel) {
+                    return label
+                }
+            }
+        }
+        return nil
+    }
 }

@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [2.3.1] - 2021-06-30Z
+### Added
+- Added descendantButtonWithAccessibilityLabel helper
+
 ## [2.3.0] - 2021-04-26
 ### Changed
 - Response Handling is now handled by a `CoreResponseHandler` instead of the `CoreNetworkService` - allowing apps that use this library the ability to override default response handling (e.g. to provide custom 401 handling).
