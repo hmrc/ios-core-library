@@ -48,6 +48,9 @@ public protocol DateService {
 
 extension MobileCore.Date {
     open class Service: DateService {
+
+        public init() {}
+
         open var currentDate: Date {
             return Date()
         }
