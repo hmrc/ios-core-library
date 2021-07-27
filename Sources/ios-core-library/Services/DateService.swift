@@ -102,7 +102,7 @@ extension MobileCore.Date {
             formatter.dateStyle = .long
             formatter.timeStyle = .none
             formatter.locale = Constants.BritishLocale
-            formatter.timeZone = currentTimeZone()
+            formatter.timeZone = currentTimeZone
             return formatter
         }
 
