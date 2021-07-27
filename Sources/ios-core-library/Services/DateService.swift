@@ -37,7 +37,7 @@ public protocol DateService {
     var yearDateFormatter: Foundation.DateFormatter { get }
     var forwardSlashDateFormatter: Foundation.DateFormatter { get }
     var httpHeaderDateFormatter: Foundation.DateFormatter { get }
-    var jsonISO8601DateFormatter: Foundation.DateFormatter
+    var jsonISO8601DateFormatter: Foundation.DateFormatter { get }
     func yyyyMMddDateToDate(_ dateString: String) -> Date
     func relativeReadableDate(_ date: Date) -> String
     func isoDate(_ yyyyMMddDate: String) -> Date
