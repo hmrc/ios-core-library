@@ -57,8 +57,8 @@ extension MobileCore.Date {
         open var britishLocale: Locale = Constants.BritishLocale
 
         open var usPosixLocale: Locale = Constants.USPosixLocale
-        
-        open var britishTimeZone: TimeZone = Constants.BritishTimeZone
+
+        open var britishTimeZone: TimeZone = Constants.BritishTimeZone!
 
         open var currentDate: Date {
             return Date()
