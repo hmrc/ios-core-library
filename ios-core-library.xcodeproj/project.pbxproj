@@ -57,7 +57,6 @@
 		OBJ_195 /* ProcessInfo+Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* ProcessInfo+Tests.swift */; };
 		OBJ_196 /* UIApplication+Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* UIApplication+Version.swift */; };
 		OBJ_197 /* URL+QueryString.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* URL+QueryString.swift */; };
-		OBJ_198 /* HRMCDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* HRMCDate.swift */; };
 		OBJ_199 /* DebugHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* DebugHelpers.swift */; };
 		OBJ_200 /* ThreadHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* ThreadHelpers.swift */; };
 		OBJ_201 /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* Injection.swift */; };
@@ -194,7 +193,6 @@
 		OBJ_14 /* ProcessInfo+Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProcessInfo+Tests.swift"; sourceTree = "<group>"; };
 		OBJ_15 /* UIApplication+Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Version.swift"; sourceTree = "<group>"; };
 		OBJ_16 /* URL+QueryString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+QueryString.swift"; sourceTree = "<group>"; };
-		OBJ_17 /* HRMCDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRMCDate.swift; sourceTree = "<group>"; };
 		OBJ_19 /* DebugHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugHelpers.swift; sourceTree = "<group>"; };
 		OBJ_20 /* ThreadHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadHelpers.swift; sourceTree = "<group>"; };
 		OBJ_22 /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
@@ -437,7 +435,7 @@
 			path = DataPoster;
 			sourceTree = "<group>";
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -456,7 +454,6 @@
 				OBJ_133 /* Gemfile.lock */,
 				OBJ_134 /* swiftlint_local.sh */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_50 /* VoidDataPoster */ = {
@@ -547,7 +544,6 @@
 				OBJ_9 /* MobileCore.h */,
 				OBJ_10 /* Configuration.swift */,
 				OBJ_11 /* Extentions */,
-				OBJ_17 /* HRMCDate.swift */,
 				OBJ_18 /* Helpers */,
 				OBJ_21 /* Injection */,
 				OBJ_24 /* KeychainAccess.swift */,
@@ -796,7 +792,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_120 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -875,7 +871,6 @@
 				OBJ_195 /* ProcessInfo+Tests.swift in Sources */,
 				OBJ_196 /* UIApplication+Version.swift in Sources */,
 				OBJ_197 /* URL+QueryString.swift in Sources */,
-				OBJ_198 /* HRMCDate.swift in Sources */,
 				OBJ_199 /* DebugHelpers.swift in Sources */,
 				OBJ_200 /* ThreadHelpers.swift in Sources */,
 				OBJ_201 /* Injection.swift in Sources */,
