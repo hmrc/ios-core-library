@@ -17,6 +17,9 @@
 import Foundation
 
 public protocol DateService {
+    var britishLocale: Locale { get }
+    var usPosixLocale: Locale { get }
+    var britishTimeZone: TimeZone { get }
     var currentDate: Date { get }
     var utcTimeZone: String { get }
     var currentTimeZone: TimeZone { get }
@@ -50,6 +53,12 @@ extension MobileCore.Date {
     open class Service: DateService {
 
         public init() {}
+
+        open var britishLocale: Locale = Constants.BritishLocale
+
+        open var usPosixLocale: Locale = Constants.USPosixLocale
+        
+        open var britishTimeZone: TimeZone = Constants.BritishTimeZone
 
         open var currentDate: Date {
             return Date()
