@@ -48,18 +48,18 @@ public protocol DateService {
 
 extension MobileCore.Date {
     open class Service: DateService {
-        public var currentDate: Date {
+        open var currentDate: Date {
             return Date()
         }
 
-        public var utcTimeZone: String {
+        open var utcTimeZone: String {
             let formatter = DateFormatter()
             formatter.locale = Locale(identifier: "en_US_POSIX")
             formatter.dateFormat = "xxx"
             return formatter.string(from: currentDate)
         }
 
-        public var currentTimeZone: TimeZone {
+        open var currentTimeZone: TimeZone {
             if UnitTests.areRunning, let gmtTimeZone = Constants.BritishTimeZone {
                 return gmtTimeZone
             }
@@ -67,7 +67,7 @@ extension MobileCore.Date {
         }
 
         /// Date formatter with template: "d MMMM"
-        public var dMMMMFormatter: Foundation.DateFormatter {
+        open var dMMMMFormatter: Foundation.DateFormatter {
             let formatter = Foundation.DateFormatter()
             formatter.locale = Constants.BritishLocale
             formatter.dateFormat = "d MMMM"
@@ -76,7 +76,7 @@ extension MobileCore.Date {
         }
 
         /// Date formatter with template: "yyyy-MM-dd"
-        public var yyyyMMddFormatter: Foundation.DateFormatter {
+        open var yyyyMMddFormatter: Foundation.DateFormatter {
             let formatter = Foundation.DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd"
             formatter.locale = Constants.USPosixLocale
@@ -88,7 +88,7 @@ extension MobileCore.Date {
              Reusable date formatter which will take a date and format it using the
              template: "MMMM,yyyy". Examples: "July,2016", "December,2017"
          */
-        public var longMonthYearFormatter: Foundation.DateFormatter {
+        open var longMonthYearFormatter: Foundation.DateFormatter {
             let formatter = Foundation.DateFormatter()
             formatter.timeStyle = .none
             formatter.locale = Constants.BritishLocale
@@ -97,7 +97,7 @@ extension MobileCore.Date {
         }
 
         /// Long-style date formatter (eg. "15 September 2015"), using current time zone
-        public var longDateFormatter: Foundation.DateFormatter {
+        open var longDateFormatter: Foundation.DateFormatter {
             let formatter = Foundation.DateFormatter()
             formatter.dateStyle = .long
             formatter.timeStyle = .none
@@ -107,7 +107,7 @@ extension MobileCore.Date {
         }
 
         /// Long-style date formatter (eg. "15 September 2015"), using British time zone
-        public var longDateBritishTimeZoneFormatter: Foundation.DateFormatter {
+        open var longDateBritishTimeZoneFormatter: Foundation.DateFormatter {
             let formatter = Foundation.DateFormatter()
             formatter.dateStyle = .long
             formatter.timeStyle = .none
@@ -117,7 +117,7 @@ extension MobileCore.Date {
         }
 
         /// Long-style date formatter (eg. "15 September 2015"), using UTC time zone
-        public var longDateUTCDateFormatter: Foundation.DateFormatter {
+        open var longDateUTCDateFormatter: Foundation.DateFormatter {
             let formatter = Foundation.DateFormatter()
             formatter.dateStyle = .long
             formatter.timeStyle = .none
@@ -127,7 +127,7 @@ extension MobileCore.Date {
         }
 
         /// Time formatter with template: "hh:mma"
-        public var timeFormatter: Foundation.DateFormatter {
+        open var timeFormatter: Foundation.DateFormatter {
             let formatter = Foundation.DateFormatter()
             formatter.timeStyle = .none
             formatter.locale = Constants.BritishLocale
@@ -136,7 +136,7 @@ extension MobileCore.Date {
         }
 
         /// Medium-style date formatter that returns relative dates (eg. "Today")
-        public var relativeDateFormatter: Foundation.DateFormatter {
+        open var relativeDateFormatter: Foundation.DateFormatter {
             let formatter = Foundation.DateFormatter()
             formatter.dateStyle = .medium
             formatter.timeStyle = .none
@@ -147,7 +147,7 @@ extension MobileCore.Date {
         }
 
         /// Used by the Form Tracker, the JSON for which has dates of the form yyyyMMdd
-        public var isoDateFormatter: Foundation.DateFormatter {
+        open var isoDateFormatter: Foundation.DateFormatter {
             let formatter = Foundation.DateFormatter()
             formatter.timeStyle = .none
             formatter.locale = Constants.USPosixLocale
@@ -157,7 +157,7 @@ extension MobileCore.Date {
         }
 
         // RFC3339 date time handling/formatting, needed for Atom feed
-        public var rfc3339DateTimeFormatter: Foundation.DateFormatter {
+        open var rfc3339DateTimeFormatter: Foundation.DateFormatter {
             let formatter = Foundation.DateFormatter()
             formatter.locale = Constants.USPosixLocale
             formatter.timeZone = TimeZone(secondsFromGMT: 0)
@@ -167,7 +167,7 @@ extension MobileCore.Date {
         }
 
         // RFC3339 date handling/formatting, needed for help to save
-        public var rfc3339DateFormatter: Foundation.DateFormatter {
+        open var rfc3339DateFormatter: Foundation.DateFormatter {
             let formatter = Foundation.DateFormatter()
             formatter.locale = Constants.USPosixLocale
             formatter.timeZone = TimeZone(secondsFromGMT: 0)
@@ -177,7 +177,7 @@ extension MobileCore.Date {
         }
 
         // Year-month formatter
-        public var yearAndMonthDateFormatter: Foundation.DateFormatter {
+        open var yearAndMonthDateFormatter: Foundation.DateFormatter {
             let formatter = Foundation.DateFormatter()
             formatter.locale = Constants.USPosixLocale
             formatter.timeZone = TimeZone(secondsFromGMT: 0)
@@ -187,7 +187,7 @@ extension MobileCore.Date {
         }
 
         // Long month and year formatter
-        public var longMonthAndYearDateFormatter: Foundation.DateFormatter {
+        open var longMonthAndYearDateFormatter: Foundation.DateFormatter {
             let formatter = Foundation.DateFormatter()
             formatter.locale = Constants.USPosixLocale
             formatter.timeZone = TimeZone(secondsFromGMT: 0)
@@ -197,7 +197,7 @@ extension MobileCore.Date {
         }
 
         // Long month formatter
-        public var longDayAndMonthDateFormatter: Foundation.DateFormatter {
+        open var longDayAndMonthDateFormatter: Foundation.DateFormatter {
             let formatter = Foundation.DateFormatter()
             formatter.locale = Constants.USPosixLocale
             formatter.timeZone = TimeZone(secondsFromGMT: 0)
@@ -207,7 +207,7 @@ extension MobileCore.Date {
         }
 
         // Year only formatter
-        public var yearDateFormatter: Foundation.DateFormatter {
+        open var yearDateFormatter: Foundation.DateFormatter {
             let formatter = Foundation.DateFormatter()
             formatter.locale = Constants.BritishLocale
             formatter.dateFormat = "yyyy"
@@ -215,7 +215,7 @@ extension MobileCore.Date {
         }
 
         // Slash date converter
-        public var forwardSlashDateFormatter: Foundation.DateFormatter {
+        open var forwardSlashDateFormatter: Foundation.DateFormatter {
             let formatter = Foundation.DateFormatter()
             formatter.locale = Constants.BritishLocale
             formatter.dateFormat = "d/MM/yyyy"
@@ -223,7 +223,7 @@ extension MobileCore.Date {
         }
 
         // HTTP header formatter
-        public var httpHeaderDateFormatter: Foundation.DateFormatter {
+        open var httpHeaderDateFormatter: Foundation.DateFormatter {
             let formatter = Foundation.DateFormatter()
             formatter.locale = Constants.BritishLocale
             formatter.dateFormat = "E, dd MMM yyyy HH:mm:ssZ"
@@ -231,7 +231,7 @@ extension MobileCore.Date {
         }
 
         // Common JSON ISO 8601 formatter
-        public var jsonISO8601DateFormatter: Foundation.DateFormatter {
+        open var jsonISO8601DateFormatter: Foundation.DateFormatter {
             let formatter = Foundation.DateFormatter()
             formatter.locale = Constants.USPosixLocale
             formatter.timeZone = TimeZone(secondsFromGMT: 0)
@@ -243,7 +243,7 @@ extension MobileCore.Date {
         /**
              Convert a date of the form "yyyy-MM-DD" to an Date
          */
-        public func yyyyMMddDateToDate(_ dateString: String) -> Date {
+        open func yyyyMMddDateToDate(_ dateString: String) -> Date {
             let yyyyMMddDateFormatter = yyyyMMddFormatter
             if let date = yyyyMMddDateFormatter.date(from: dateString) {
                 return date
@@ -256,7 +256,7 @@ extension MobileCore.Date {
              Convert a date such as "2016-05-03" to the form "Today", or
              "Saturday", or "4 Jun 2016"
          */
-        public func relativeReadableDate(_ date: Date) -> String {
+        open func relativeReadableDate(_ date: Date) -> String {
             let dateFormatter = relativeDateFormatter
             return dateFormatter.string(from: date)
         }
@@ -266,7 +266,7 @@ extension MobileCore.Date {
             "20160116" to "1 January 2016".  This date format is used by the Form
             Tracking JSON.
          */
-        public func isoDate(_ yyyyMMddDate: String) -> Date {
+        open func isoDate(_ yyyyMMddDate: String) -> Date {
             let dateFormatter = isoDateFormatter
             if let date = dateFormatter.date(from: yyyyMMddDate) {
                 return date
@@ -278,7 +278,7 @@ extension MobileCore.Date {
         /**
             Convert a datestamp such as 1499209200000 to a Date
          */
-        public func epochDate(milliseconds: Double) -> Date {
+        open func epochDate(milliseconds: Double) -> Date {
             let seconds = milliseconds / 1000
             return Date(timeIntervalSince1970: TimeInterval(seconds))
         }
@@ -287,13 +287,13 @@ extension MobileCore.Date {
          HTTP header date format - convert E, dd MMM yyyy HH:mm:ssZ to a Date,
          e.g. convert "Wed, 02 Aug 2017 10:22:22 GMT"
          */
-        public func httpHeaderDate(_ dateString: String) -> Date? {
+        open func httpHeaderDate(_ dateString: String) -> Date? {
             let dateFormatter = httpHeaderDateFormatter
             return dateFormatter.date(from: dateString)
         }
 
         // 21 June 2020 at 2:37pm
-        public func dateAtTimeFormat(date: Date) -> String {
+        open func dateAtTimeFormat(date: Date) -> String {
             "\(longDateBritishTimeZoneFormatter.string(from: date)) at \(timeFormatter.string(from: date))"
         }
 
