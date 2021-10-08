@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-import Foundation
 import UIKit
 
 public protocol ApplicationStateService {
     var current: UIApplication.State { get }
+    var badgeCount: Int { get set }
 }
 
 extension MobileCore.Application.State {
@@ -27,6 +27,14 @@ extension MobileCore.Application.State {
 
         public var current: UIApplication.State {
             return UIApplication.shared.applicationState
+        }
+
+        public var badgeCount: Int {
+            get {
+                UIApplication.shared.applicationIconBadgeNumber
+            } set {
+                UIApplication.shared.applicationIconBadgeNumber = newValue
+            }
         }
     }
 }
