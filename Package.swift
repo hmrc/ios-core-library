@@ -11,11 +11,11 @@ let package = Package(
         .library(
             name: "ios-core-library",
             targets: ["ios-core-library"]
-        ),
+        )
     ],
     dependencies: [
         .package(url: "https://github.com/devicekit/DeviceKit.git", from: "4.0.0"),
-        .package(url: "https://github.com/datatheorem/TrustKit.git", from: "1.7.0"),
+        .package(url: "https://github.com/datatheorem/TrustKit.git", from: "1.7.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -25,6 +25,6 @@ let package = Package(
             dependencies: ["DeviceKit", "TrustKit"]),
         .testTarget(
             name: "ios-core-libraryTests",
-            dependencies: ["ios-core-library"]),
+            dependencies: ["ios-core-library"])
     ]
 )

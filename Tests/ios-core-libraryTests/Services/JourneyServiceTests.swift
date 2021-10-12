@@ -27,7 +27,7 @@ class JourneyServiceTests: CoreUnitTestCase {
     var userDefaultsKey = ""
 
     override func createMockJourneyService() -> MockJourneyService? {
-        //we dont want to mock the journey service as its the SUT
+        // we dont want to mock the journey service as its the SUT
         return nil
     }
 

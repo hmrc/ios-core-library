@@ -110,7 +110,7 @@ extension MobileCore.Injection {
         }
 
         public func reset() {
-            //call inject with nil object so we create a new instance of the injected object
+            // call inject with nil object so we create a new instance of the injected object
             inject()
         }
     }

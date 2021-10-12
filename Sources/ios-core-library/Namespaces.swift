@@ -18,7 +18,7 @@ import Foundation
 public struct MobileCore {
     private static var _config: Configuration?
 
-    ///Must be setup by main target or crash
+    /// Must be setup by main target or crash
     public static var config: Configuration {
         get {
             guard let config = _config else {
@@ -33,11 +33,11 @@ public struct MobileCore {
 
     public struct Injection {
         public static var injectors = [String: ResettableInjector]()
-        ///Fired after injectors are initialised and reset. Useful for configuring injected instances
+        /// Fired after injectors are initialised and reset. Useful for configuring injected instances
         public static var initialised: (() -> Void)!
         public static func initialise() {
 
-            //Allow third party code to initialise
+            // Allow third party code to initialise
             Injection.initialised?()
         }
     }

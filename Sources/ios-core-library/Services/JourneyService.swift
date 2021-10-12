@@ -16,28 +16,28 @@
 
 import Foundation
 
-///Responsible for keeping track of various session related things
+/// Responsible for keeping track of various session related things
 public protocol JourneyService {
     var journeyId: String {get set}
     func resetJourneyId()
 
     func set(id: String)
-    ///Returns the journey associated with the specified named event and description
-    ///or nil if no journey id has been saved for this event.
-    ///@param name anything you want as long as name + description == unique key
-    ///@param description optional. anything you want as long as name + description == unique key
+    /// Returns the journey associated with the specified named event and description
+    /// or nil if no journey id has been saved for this event.
+    /// @param name anything you want as long as name + description == unique key
+    /// @param description optional. anything you want as long as name + description == unique key
     func journeyId(forEvent name: String, description: String?) -> String?
 
-    ///Associates the specified journey id with the supplied named event and description
-    ///@param name anything you want as long as name + description == unique key
-    ///@param description optional. anything you want as long as name + description == unique key
+    /// Associates the specified journey id with the supplied named event and description
+    /// @param name anything you want as long as name + description == unique key
+    /// @param description optional. anything you want as long as name + description == unique key
     func storeJourneyId(forEvent name: String, description: String?)
 
-    ///Checks to see if the current journeyId matches the last stored journeyId
-    ///for the supplied named event and description. Returns true if the journey id has changed
-    ///or was never stored. False if journey id remains the same.
-    ///@param name anything you want as long as name + description == unique key
-    ///@param description optional. anything you want as long as name + description == unique key
+    /// Checks to see if the current journeyId matches the last stored journeyId
+    /// for the supplied named event and description. Returns true if the journey id has changed
+    /// or was never stored. False if journey id remains the same.
+    /// @param name anything you want as long as name + description == unique key
+    /// @param description optional. anything you want as long as name + description == unique key
     func hasStartedNewJourney(forEvent name: String, description: String?) -> Bool
 
 }

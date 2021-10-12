@@ -144,7 +144,7 @@ extension MobileCore {
                     return true
                 }
                 Log.debug(
-                    //swiftlint:disable:next line_length
+                    // swiftlint:disable:next line_length
                     log: "Failed to add data to keychain with status=\(status). Attempted to add data [\(String(describing: data))] for key [\(key)]"
                 )
                 return false
