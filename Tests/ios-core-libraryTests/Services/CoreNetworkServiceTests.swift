@@ -78,7 +78,8 @@ class CoreNetworkServiceTests: CoreUnitTestCase {
         sut = MobileCore.Injection.Service.network.injectedObject()
         analyticsDelegate = NetworkAnalyticsDelegate()
         auditDelegate = NetworkAuditDelegate()
-        MobileCore.Network.configure(analyticsDelegate: analyticsDelegate, auditDelegate: auditDelegate)
+        let responseHandler = MobileCore.Network.ResponseHandler(auditDelegate: auditDelegate, analyticsDelegate: analyticsDelegate)
+        MobileCore.Network.configure(responseHandler: responseHandler)
 
         // swiftlint:disable:next force_try
         defaultData = try! JSONSerialization.data(withJSONObject: ["key": "value"], options: .prettyPrinted)
