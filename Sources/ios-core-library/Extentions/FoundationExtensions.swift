@@ -115,7 +115,7 @@ extension String {
         guard let from16 = utf16.index(utf16.startIndex, offsetBy: nsRange.location, limitedBy: utf16.endIndex),
             let to16 = utf16.index(from16, offsetBy: nsRange.length, limitedBy: utf16.endIndex) else { return nil }
         if let from = String.Index(from16, within: self),
-            let to = String.Index(to16, within: self) { //swiftlint:disable:this identifier_name
+            let to = String.Index(to16, within: self) { // swiftlint:disable:this identifier_name
             return from ..< to
         }
         return nil

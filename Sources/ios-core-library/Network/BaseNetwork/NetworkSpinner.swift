@@ -87,7 +87,7 @@ extension MobileCore.Network {
             }
         }
 
-        ///Default injected network spinner. App must supply and inject a concrete instance of NetworkSpinner
+        /// Default injected network spinner. App must supply and inject a concrete instance of NetworkSpinner
         class Empty: NetworkSpinner {
             let todo = "App should call MobileCore.Injection.Service.networkSpinner.inject(...) to inject a concrete instance of network spinner"
             public func show() {

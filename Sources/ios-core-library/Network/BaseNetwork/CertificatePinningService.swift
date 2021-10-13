@@ -19,7 +19,7 @@ import TrustKit
 
 public protocol CertificatePinningService {
     func enableCertificatePinning(using pinningModels: [MobileCore.HTTP.CertificatePinning.Model])
-    //swiftlint:disable:next line_length
+    // swiftlint:disable:next line_length
     func validate(challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void)
 }
 
@@ -31,7 +31,7 @@ extension MobileCore.HTTP {
             let publicKeys: [String]
             let includeSubdomains: Bool
             let enforcePinning: Bool
-            
+
             public init(url: String, publicKeys: [String], includeSubdomains: Bool = true, enforcePinning: Bool = true) {
                 self.url = url
                 self.publicKeys = publicKeys
@@ -66,7 +66,7 @@ extension MobileCore.HTTP {
             initCertificatePinning(domains: domains)
         }
 
-        //swiftlint:disable:next line_length
+        // swiftlint:disable:next line_length
         public func validate(challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
             let performDefaultHandling = URLSession.AuthChallengeDisposition.performDefaultHandling
 

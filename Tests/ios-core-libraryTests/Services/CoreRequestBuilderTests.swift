@@ -221,6 +221,7 @@ class RequestBuilderTests: CoreUnitTestCase {
         let json = [
             name: value
         ]
+        // swiftlint:disable:next force_try
         let data = try! JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
 
         // When
@@ -239,7 +240,7 @@ class RequestBuilderTests: CoreUnitTestCase {
                     XCTFail("No query components")
                     return
                 }
-                let dict = Dictionary(uniqueKeysWithValues: components.map{ ($0.name, $0.value) })
+                let dict = Dictionary(uniqueKeysWithValues: components.map { ($0.name, $0.value) })
                 XCTAssertEqual(dict[name], value)
                 expect.fulfill()
             case .failure:
@@ -263,6 +264,7 @@ class RequestBuilderTests: CoreUnitTestCase {
             let value: String
         }
         let param = SimpleEncodable(name: name, value: value)
+        // swiftlint:disable:next force_try
         let data = try! JSONEncoder().encode(param)
 
         // When
@@ -281,7 +283,7 @@ class RequestBuilderTests: CoreUnitTestCase {
                     XCTFail("No query components")
                     return
                 }
-                let dict = Dictionary(uniqueKeysWithValues: components.map{ ($0.name, $0.value) })
+                let dict = Dictionary(uniqueKeysWithValues: components.map { ($0.name, $0.value) })
                 XCTAssertEqual(dict["name"], name)
                 XCTAssertEqual(dict["value"], value)
                 expect.fulfill()
@@ -304,6 +306,7 @@ class RequestBuilderTests: CoreUnitTestCase {
         let json = [
             name: value
         ]
+        // swiftlint:disable:next force_try
         let data = try! JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
 
         // When
@@ -322,6 +325,7 @@ class RequestBuilderTests: CoreUnitTestCase {
                     XCTFail("No request body")
                     return
                 }
+                // swiftlint:disable:next force_cast force_try
                 let requestJson = try! JSONSerialization.jsonObject(with: body, options: .allowFragments) as! [String: String]
                 XCTAssertEqual(requestJson[name], value)
                 expect.fulfill()
@@ -346,6 +350,7 @@ class RequestBuilderTests: CoreUnitTestCase {
             let value: String
         }
         let param = SimpleEncodable(name: name, value: value)
+        // swiftlint:disable:next force_try
         let data = try! JSONEncoder().encode(param)
 
         // When
@@ -364,7 +369,9 @@ class RequestBuilderTests: CoreUnitTestCase {
                     XCTFail("No request body")
                     return
                 }
+                // swiftlint:disable:next force_cast force_try
                 let requestJSON = try! JSONSerialization.jsonObject(with: body, options: .allowFragments) as! [String: String]
+                // swiftlint:disable:next force_try
                 let requestObject = try! JSONDecoder().decode(SimpleEncodable.self, from: body)
                 XCTAssertEqual(requestJSON["name"], name)
                 XCTAssertEqual(requestJSON["value"], value)

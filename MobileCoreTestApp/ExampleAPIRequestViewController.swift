@@ -62,7 +62,7 @@ class ExampleAPIRequestViewController: UIViewController, CoreNetworkServiceInjec
             data: ["os": "ios", "version": "6.2.0"],
             headers: ["Accept": "application/vnd.hmrc.1.0+json"]
             )
-        //Optionally modify request, here we use this closure just to output the request to the log
+        // Optionally modify request, here we use this closure just to output the request to the log
         requestBuilder.modifyRequest = modifyNetworkRequest
         self.coreNetworkService.data(request: requestBuilder, networkHandler)
     }
@@ -74,7 +74,7 @@ class ExampleAPIRequestViewController: UIViewController, CoreNetworkServiceInjec
             data: ["ExampleKey": "Example Value"],
             headers: ["AHeaderKey": "An Example Value"]
         )
-        //Optionally modify request, here we use this closure just to output the request to the log
+        // Optionally modify request, here we use this closure just to output the request to the log
         requestBuilder.modifyRequest = modifyNetworkRequest
         self.coreNetworkService.data(request: requestBuilder, networkHandler)
     }

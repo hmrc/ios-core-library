@@ -20,7 +20,7 @@ import ios_core_library
 class ExampleApiRequestBuilder: MobileCore.HTTP.RequestBuilder {
 
     override func additionalHeaders(_ handler: @escaping (Result<[String: String], Error>) -> Void) {
-        //i.e fake network auth call
+        // i.e fake network auth call
         delayedCall {
             let authHeaders = ["FakeAuthHeader": "Fake Auth Value"]
             handler(.success(authHeaders))
