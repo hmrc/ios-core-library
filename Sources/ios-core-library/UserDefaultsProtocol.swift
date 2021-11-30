@@ -23,6 +23,7 @@ public protocol UserDefaultsProtocol {
     func integer(forKey defaultName: String) -> Int
     func object(forKey defaultName: String) -> Any?
     func removeObject(forKey defaultName: String)
+    func dictionaryRepresentation() -> [String : Any]
 }
 
 extension UserDefaults: UserDefaultsProtocol {}
