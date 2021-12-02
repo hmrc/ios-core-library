@@ -22,6 +22,7 @@
 
 /* Begin PBXBuildFile section */
 		5806BDBC2624AC6E004BCE74 /* CoreResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5806BDBB2624AC6E004BCE74 /* CoreResponseHandler.swift */; };
+		58F0DBC22758FD9D008ECD4F /* RangeReplaceableCollection+HMRC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F0DBC12758FD9D008ECD4F /* RangeReplaceableCollection+HMRC.swift */; };
 		OBJ_140 /* Device.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_119 /* Device.generated.swift */; };
 		OBJ_147 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_118 /* Package.swift */; };
 		OBJ_153 /* RSSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_84 /* RSSwizzle.m */; };
@@ -159,6 +160,7 @@
 
 /* Begin PBXFileReference section */
 		5806BDBB2624AC6E004BCE74 /* CoreResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreResponseHandler.swift; sourceTree = "<group>"; };
+		58F0DBC12758FD9D008ECD4F /* RangeReplaceableCollection+HMRC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RangeReplaceableCollection+HMRC.swift"; sourceTree = "<group>"; };
 		"DeviceKit::DeviceKit::Product" /* DeviceKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DeviceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		OBJ_101 /* TSKNSURLConnectionDelegateProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSKNSURLConnectionDelegateProxy.m; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 				OBJ_14 /* ProcessInfo+Tests.swift */,
 				OBJ_15 /* UIApplication+Version.swift */,
 				OBJ_16 /* URL+QueryString.swift */,
+				58F0DBC12758FD9D008ECD4F /* RangeReplaceableCollection+HMRC.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -892,6 +895,7 @@
 				OBJ_216 /* CoreDecoder.swift in Sources */,
 				OBJ_217 /* DataFetcher.swift in Sources */,
 				OBJ_218 /* DataFetcherFactory.swift in Sources */,
+				58F0DBC22758FD9D008ECD4F /* RangeReplaceableCollection+HMRC.swift in Sources */,
 				OBJ_219 /* NonErrorTransformingDataFetcherFactory.swift in Sources */,
 				OBJ_220 /* NonTransformingServiceErrorTransformer.swift in Sources */,
 				OBJ_221 /* ResultTransformer.swift in Sources */,
