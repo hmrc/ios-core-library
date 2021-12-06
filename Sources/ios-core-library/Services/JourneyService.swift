@@ -15,6 +15,7 @@
  */
 
 import Foundation
+import PINCache
 
 ///Responsible for keeping track of various session related things
 public protocol JourneyService {
@@ -44,7 +45,7 @@ public protocol JourneyService {
 
 extension MobileCore.Journey {
 
-    public class Service: JourneyService, UserDefaultsInjected {
+    public class Service: JourneyService, CoreConfigCacheInjected {
 
         private var _journeyId: String?
 
@@ -82,12 +83,12 @@ extension MobileCore.Journey {
         public func storeJourneyId(forEvent name: String, description: String?) {
             let journeyId = self.journeyId
             let key = storageKey(eventName: name, description: description)
-            userDefaults.set(journeyId, forKey: key)
+            coreConfigCache.setObject(journeyId, forKey: key)
         }
 
         public func journeyId(forEvent name: String, description: String?=nil) -> String? {
             let key = self.storageKey(eventName: name, description: description)
-            return userDefaults.string(forKey: key)
+            return coreConfigCache.object(forKey: key) as? String ?? nil
         }
 
         // MARK: - Logic

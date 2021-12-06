@@ -15,6 +15,7 @@
  */
 
 import Foundation
+import PINCache
 
 //Copy and paste boiler plate
 //protocol <#ProtocolName#>Injected {}
@@ -77,14 +78,14 @@ extension NetworkSpinnerPolicyInjected {
     public var networkSpinnerPolicy: NetworkSpinnerPolicy { return MobileCore.Injection.Service.networkSpinnerPolicy.injectedObject() }
 }
 
-public protocol UserDefaultsInjected {}
-extension UserDefaultsInjected {
-    public var userDefaults: UserDefaultsProtocol { return MobileCore.Injection.Service.userDefaults.injectedObject() }
-}
-
 public protocol CertificatePinningInjected {}
 extension CertificatePinningInjected {
     public var certificatePinningService: CertificatePinningService { return MobileCore.Injection.Service.certificatePinning.injectedObject() }
+}
+
+public protocol CoreConfigCacheInjected {}
+extension CoreConfigCacheInjected {
+    public var coreConfigCache: PINCache { return MobileCore.Injection.Service.coreConfig.injectedObject() }
 }
 
 extension MobileCore.Injection {
@@ -102,7 +103,9 @@ extension MobileCore.Injection {
         public static let fraudPrevention = Injector("FraudPreventionService") { return MobileCore.FraudPrevention.Service() }
         public static let networkSpinner = Injector("HTTPService") { return MobileCore.Network.Spinner.Empty() }
         public static let networkSpinnerPolicy = Injector("NetworkSpinnerService") { return MobileCore.Network.Spinner.Policy() }
-        public static let userDefaults = Injector("UserDefaultsService") { return UserDefaults() }
         public static let certificatePinning = Injector("CertificatePinningService") { return MobileCore.HTTP.CertificatePinning() }
+        public static let coreConfig = Injector("CoreConfigCache") {
+            return PINCache(name: "CoreConfigCache", rootPath: StoragePath.permanent)
+        }
     }
 }
