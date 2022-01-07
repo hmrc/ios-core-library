@@ -18,7 +18,6 @@ import XCTest
 import ios_core_library
 
 class JourneyServiceTests: CoreUnitTestCase {
-
     var service: JourneyService!
 
     let initialJourneyId = "Journey123"
@@ -30,9 +29,12 @@ class JourneyServiceTests: CoreUnitTestCase {
         //we dont want to mock the journey service as its the SUT
         return nil
     }
-
+    var userDefaults: UserDefaults!
     override func setUp() {
         super.setUp()
+        userDefaults = .init()
+        MobileCore.Injection.Service.userDefaults.inject(userDefaults)
+        
         service = MobileCore.Injection.Service.journey.injectedObject() as JourneyService
         service.set(id: initialJourneyId)
         userDefaultsKey = service.storageKey(eventName: eventName, description: description)
@@ -54,12 +56,16 @@ class JourneyServiceTests: CoreUnitTestCase {
     func testHasStartedNewJourneyCalled_whenJourneyIdHasChanged_thenTrueIsReturned() {
         service.storeJourneyId(forEvent: eventName, description: eventDescription)
         service.set(id: "AnotherJourneyId")
-        mockUserDefaults!.valuesToReturn = [userDefaultsKey: "SomeDifferentJourneyId"]
+        userDefaults.set("SomeDifferentJourneyId", forKey: eventName)
         let newJourneyStarted = service.hasStartedNewJourney(forEvent: eventName, description: eventDescription)
         XCTAssertTrue(newJourneyStarted)
     }
 
     func testHasStartedNewJourneyCalled_whenJourneyIdHasNotYetBeenStored_thenTrueIsReturned() {
+        userDefaults.removeObject(forKey: eventName)
+        userDefaults.synchronize()
+        MobileCore.Injection.Service.journey.reset()
+        service = MobileCore.Injection.Service.journey.injectedObject() as JourneyService
         let newJourneyStarted = service.hasStartedNewJourney(forEvent: eventName, description: eventDescription)
         XCTAssertTrue(newJourneyStarted)
     }
