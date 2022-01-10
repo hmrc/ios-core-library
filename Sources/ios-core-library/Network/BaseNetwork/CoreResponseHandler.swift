@@ -63,8 +63,8 @@ extension MobileCore.Network {
                     throw self.handle4XX(request: request, response: response, error: error)
                 case 503:
                     throw self.handle503(request: request, response: response)
-                case 521:
-                    throw self.handle521(request: request, response: response)
+                case 521, 523:
+                    throw self.handle521And523(request: request, response: response)
                 case 500...599:
                     throw self.handle500To599(request: request, response: response, error: error)
                 default:
@@ -118,7 +118,7 @@ extension MobileCore.Network {
             return shutteringError
         }
 
-        open func handle521(request: MobileCore.HTTP.RequestBuilder, response: MobileCore.HTTP.Response) -> ServiceError {
+        open func handle521And523(request: MobileCore.HTTP.RequestBuilder, response: MobileCore.HTTP.Response) -> ServiceError {
             do {
                 var model = try JSONDecoder().decode(ShutteredModel.self, from: response.value)
                 let defaultTitle = ShutteredModel.default.title

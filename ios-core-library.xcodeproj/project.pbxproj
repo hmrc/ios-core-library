@@ -23,35 +23,6 @@
 /* Begin PBXBuildFile section */
 		5806BDBC2624AC6E004BCE74 /* CoreResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5806BDBB2624AC6E004BCE74 /* CoreResponseHandler.swift */; };
 		58F0DBC22758FD9D008ECD4F /* RangeReplaceableCollection+HMRC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F0DBC12758FD9D008ECD4F /* RangeReplaceableCollection+HMRC.swift */; };
-		OBJ_140 /* Device.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_119 /* Device.generated.swift */; };
-		OBJ_147 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_118 /* Package.swift */; };
-		OBJ_153 /* RSSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_84 /* RSSwizzle.m */; };
-		OBJ_154 /* init_registry_tables.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_87 /* init_registry_tables.c */; };
-		OBJ_155 /* registry_search.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_88 /* registry_search.c */; };
-		OBJ_156 /* trie_search.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_89 /* trie_search.c */; };
-		OBJ_157 /* tsk_assert.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_90 /* tsk_assert.c */; };
-		OBJ_158 /* TSKSPKIHashCache.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_92 /* TSKSPKIHashCache.m */; };
-		OBJ_159 /* ssl_pin_verifier.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_93 /* ssl_pin_verifier.m */; };
-		OBJ_160 /* TSKBackgroundReporter.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_95 /* TSKBackgroundReporter.m */; };
-		OBJ_161 /* TSKPinFailureReport.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_96 /* TSKPinFailureReport.m */; };
-		OBJ_162 /* TSKReportsRateLimiter.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_97 /* TSKReportsRateLimiter.m */; };
-		OBJ_163 /* reporting_utils.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_98 /* reporting_utils.m */; };
-		OBJ_164 /* vendor_identifier.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_99 /* vendor_identifier.m */; };
-		OBJ_165 /* TSKNSURLConnectionDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_101 /* TSKNSURLConnectionDelegateProxy.m */; };
-		OBJ_166 /* TSKNSURLSessionDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_102 /* TSKNSURLSessionDelegateProxy.m */; };
-		OBJ_167 /* TSKPinningValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_103 /* TSKPinningValidator.m */; };
-		OBJ_168 /* TSKPinningValidatorResult.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_104 /* TSKPinningValidatorResult.m */; };
-		OBJ_169 /* TSKTrustKitConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_105 /* TSKTrustKitConfig.m */; };
-		OBJ_170 /* TrustKit.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_106 /* TrustKit.m */; };
-		OBJ_171 /* configuration_utils.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_107 /* configuration_utils.m */; };
-		OBJ_172 /* parse_configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_108 /* parse_configuration.m */; };
-		OBJ_174 /* TSKTrustKitConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = OBJ_110 /* TSKTrustKitConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		OBJ_175 /* TSKTrustDecision.h in Headers */ = {isa = PBXBuildFile; fileRef = OBJ_111 /* TSKTrustDecision.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		OBJ_176 /* TSKPinningValidatorResult.h in Headers */ = {isa = PBXBuildFile; fileRef = OBJ_112 /* TSKPinningValidatorResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		OBJ_177 /* TrustKit.h in Headers */ = {isa = PBXBuildFile; fileRef = OBJ_113 /* TrustKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		OBJ_178 /* TSKPinningValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = OBJ_114 /* TSKPinningValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		OBJ_179 /* TSKPinningValidatorCallback.h in Headers */ = {isa = PBXBuildFile; fileRef = OBJ_115 /* TSKPinningValidatorCallback.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		OBJ_186 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_116 /* Package.swift */; };
 		OBJ_192 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* Configuration.swift */; };
 		OBJ_193 /* Enum+CaseCountable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* Enum+CaseCountable.swift */; };
 		OBJ_194 /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* FoundationExtensions.swift */; };
@@ -101,53 +72,20 @@
 		OBJ_239 /* UserDefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_68 /* UserDefaultsProtocol.swift */; };
 		OBJ_240 /* AccessibilityHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_70 /* AccessibilityHelpers.swift */; };
 		OBJ_241 /* UIView+Descendants.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_71 /* UIView+Descendants.swift */; };
-		OBJ_243 /* TrustKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "TrustKit::TrustKit::Product" /* TrustKit.framework */; };
-		OBJ_244 /* DeviceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "DeviceKit::DeviceKit::Product" /* DeviceKit.framework */; };
-		OBJ_252 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_263 /* CoreNetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_75 /* CoreNetworkServiceTests.swift */; };
 		OBJ_264 /* CoreRequestBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_76 /* CoreRequestBuilderTests.swift */; };
 		OBJ_265 /* JourneyServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_77 /* JourneyServiceTests.swift */; };
 		OBJ_266 /* NetworkSessionConfigurationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_78 /* NetworkSessionConfigurationServiceTests.swift */; };
 		OBJ_268 /* ios_core_library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "ios-core-library::ios-core-library::Product" /* ios_core_library.framework */; };
-		OBJ_269 /* TrustKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "TrustKit::TrustKit::Product" /* TrustKit.framework */; };
-		OBJ_270 /* DeviceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "DeviceKit::DeviceKit::Product" /* DeviceKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5806BDAD262496CF004BCE74 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = OBJ_1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = "TrustKit::TrustKit";
-			remoteInfo = TrustKit;
-		};
-		5806BDAE262496CF004BCE74 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = OBJ_1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = "DeviceKit::DeviceKit";
-			remoteInfo = DeviceKit;
-		};
 		5806BDAF262496CF004BCE74 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "ios-core-library::ios-core-library";
 			remoteInfo = "ios-core-library";
-		};
-		5806BDB0262496CF004BCE74 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = OBJ_1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = "TrustKit::TrustKit";
-			remoteInfo = TrustKit;
-		};
-		5806BDB1262496CF004BCE74 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = OBJ_1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = "DeviceKit::DeviceKit";
-			remoteInfo = DeviceKit;
 		};
 		5806BDB8262496D0004BCE74 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -161,25 +99,7 @@
 /* Begin PBXFileReference section */
 		5806BDBB2624AC6E004BCE74 /* CoreResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreResponseHandler.swift; sourceTree = "<group>"; };
 		58F0DBC12758FD9D008ECD4F /* RangeReplaceableCollection+HMRC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RangeReplaceableCollection+HMRC.swift"; sourceTree = "<group>"; };
-		"DeviceKit::DeviceKit::Product" /* DeviceKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DeviceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		OBJ_101 /* TSKNSURLConnectionDelegateProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSKNSURLConnectionDelegateProxy.m; sourceTree = "<group>"; };
-		OBJ_102 /* TSKNSURLSessionDelegateProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSKNSURLSessionDelegateProxy.m; sourceTree = "<group>"; };
-		OBJ_103 /* TSKPinningValidator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSKPinningValidator.m; sourceTree = "<group>"; };
-		OBJ_104 /* TSKPinningValidatorResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSKPinningValidatorResult.m; sourceTree = "<group>"; };
-		OBJ_105 /* TSKTrustKitConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSKTrustKitConfig.m; sourceTree = "<group>"; };
-		OBJ_106 /* TrustKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrustKit.m; sourceTree = "<group>"; };
-		OBJ_107 /* configuration_utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = configuration_utils.m; sourceTree = "<group>"; };
-		OBJ_108 /* parse_configuration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = parse_configuration.m; sourceTree = "<group>"; };
-		OBJ_110 /* TSKTrustKitConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSKTrustKitConfig.h; sourceTree = "<group>"; };
-		OBJ_111 /* TSKTrustDecision.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSKTrustDecision.h; sourceTree = "<group>"; };
-		OBJ_112 /* TSKPinningValidatorResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSKPinningValidatorResult.h; sourceTree = "<group>"; };
-		OBJ_113 /* TrustKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrustKit.h; sourceTree = "<group>"; };
-		OBJ_114 /* TSKPinningValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSKPinningValidator.h; sourceTree = "<group>"; };
-		OBJ_115 /* TSKPinningValidatorCallback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSKPinningValidatorCallback.h; sourceTree = "<group>"; };
-		OBJ_116 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/paul/Dropbox/Work/HMRC/dev/ios-core-library/.build/checkouts/TrustKit/Package.swift"; sourceTree = "<group>"; };
-		OBJ_118 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/paul/Dropbox/Work/HMRC/dev/ios-core-library/.build/checkouts/DeviceKit/Package.swift"; sourceTree = "<group>"; };
-		OBJ_119 /* Device.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.generated.swift; sourceTree = "<group>"; };
 		OBJ_12 /* Enum+CaseCountable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enum+CaseCountable.swift"; sourceTree = "<group>"; };
 		OBJ_125 /* MobileCoreTestApp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MobileCoreTestApp; sourceTree = SOURCE_ROOT; };
 		OBJ_126 /* SubModule */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SubModule; sourceTree = SOURCE_ROOT; };
@@ -243,45 +163,16 @@
 		OBJ_76 /* CoreRequestBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreRequestBuilderTests.swift; sourceTree = "<group>"; };
 		OBJ_77 /* JourneyServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyServiceTests.swift; sourceTree = "<group>"; };
 		OBJ_78 /* NetworkSessionConfigurationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionConfigurationServiceTests.swift; sourceTree = "<group>"; };
-		OBJ_84 /* RSSwizzle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSSwizzle.m; sourceTree = "<group>"; };
-		OBJ_87 /* init_registry_tables.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = init_registry_tables.c; sourceTree = "<group>"; };
-		OBJ_88 /* registry_search.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = registry_search.c; sourceTree = "<group>"; };
-		OBJ_89 /* trie_search.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = trie_search.c; sourceTree = "<group>"; };
 		OBJ_9 /* MobileCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MobileCore.h; sourceTree = "<group>"; };
-		OBJ_90 /* tsk_assert.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = tsk_assert.c; sourceTree = "<group>"; };
-		OBJ_92 /* TSKSPKIHashCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSKSPKIHashCache.m; sourceTree = "<group>"; };
-		OBJ_93 /* ssl_pin_verifier.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ssl_pin_verifier.m; sourceTree = "<group>"; };
-		OBJ_95 /* TSKBackgroundReporter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSKBackgroundReporter.m; sourceTree = "<group>"; };
-		OBJ_96 /* TSKPinFailureReport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSKPinFailureReport.m; sourceTree = "<group>"; };
-		OBJ_97 /* TSKReportsRateLimiter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSKReportsRateLimiter.m; sourceTree = "<group>"; };
-		OBJ_98 /* reporting_utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = reporting_utils.m; sourceTree = "<group>"; };
-		OBJ_99 /* vendor_identifier.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = vendor_identifier.m; sourceTree = "<group>"; };
-		"TrustKit::TrustKit::Product" /* TrustKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TrustKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"ios-core-library::ios-core-library::Product" /* ios_core_library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ios_core_library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		"ios-core-library::ios-core-libraryTests::Product" /* ios_core_libraryTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; name = ios_core_libraryTests.xctest; path = "ios-core-libraryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		"ios-core-library::ios-core-libraryTests::Product" /* ios-core-libraryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = "ios-core-libraryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		OBJ_141 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		OBJ_180 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		OBJ_242 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_243 /* TrustKit.framework in Frameworks */,
-				OBJ_244 /* DeviceKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,36 +181,12 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_268 /* ios_core_library.framework in Frameworks */,
-				OBJ_269 /* TrustKit.framework in Frameworks */,
-				OBJ_270 /* DeviceKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		OBJ_100 /* Swizzling */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_101 /* TSKNSURLConnectionDelegateProxy.m */,
-				OBJ_102 /* TSKNSURLSessionDelegateProxy.m */,
-			);
-			path = Swizzling;
-			sourceTree = "<group>";
-		};
-		OBJ_109 /* public */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_110 /* TSKTrustKitConfig.h */,
-				OBJ_111 /* TSKTrustDecision.h */,
-				OBJ_112 /* TSKPinningValidatorResult.h */,
-				OBJ_113 /* TrustKit.h */,
-				OBJ_114 /* TSKPinningValidator.h */,
-				OBJ_115 /* TSKPinningValidatorCallback.h */,
-			);
-			path = public;
-			sourceTree = "<group>";
-		};
 		OBJ_11 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,23 +200,11 @@
 			path = Extentions;
 			sourceTree = "<group>";
 		};
-		OBJ_117 /* DeviceKit 4.1.0 */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_118 /* Package.swift */,
-				OBJ_119 /* Device.generated.swift */,
-			);
-			name = "DeviceKit 4.1.0";
-			path = .build/checkouts/DeviceKit/Source;
-			sourceTree = SOURCE_ROOT;
-		};
 		OBJ_120 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				"ios-core-library::ios-core-library::Product" /* ios_core_library.framework */,
-				"TrustKit::TrustKit::Product" /* TrustKit.framework */,
-				"ios-core-library::ios-core-libraryTests::Product" /* ios_core_libraryTests.xctest */,
-				"DeviceKit::DeviceKit::Product" /* DeviceKit.framework */,
+				"ios-core-library::ios-core-libraryTests::Product" /* ios-core-libraryTests.xctest */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -535,8 +390,6 @@
 		OBJ_79 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_80 /* TrustKit 1.7.0 */,
-				OBJ_117 /* DeviceKit 4.1.0 */,
 			);
 			name = Dependencies;
 			sourceTree = "<group>";
@@ -563,185 +416,9 @@
 			path = "Sources/ios-core-library";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_80 /* TrustKit 1.7.0 */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_81 /* TrustKit */,
-				OBJ_116 /* Package.swift */,
-			);
-			name = "TrustKit 1.7.0";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_81 /* TrustKit */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_82 /* Dependencies */,
-				OBJ_91 /* Pinning */,
-				OBJ_94 /* Reporting */,
-				OBJ_100 /* Swizzling */,
-				OBJ_103 /* TSKPinningValidator.m */,
-				OBJ_104 /* TSKPinningValidatorResult.m */,
-				OBJ_105 /* TSKTrustKitConfig.m */,
-				OBJ_106 /* TrustKit.m */,
-				OBJ_107 /* configuration_utils.m */,
-				OBJ_108 /* parse_configuration.m */,
-				OBJ_109 /* public */,
-			);
-			name = TrustKit;
-			path = .build/checkouts/TrustKit/TrustKit;
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_82 /* Dependencies */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_83 /* RSSwizzle */,
-				OBJ_85 /* domain_registry */,
-			);
-			path = Dependencies;
-			sourceTree = "<group>";
-		};
-		OBJ_83 /* RSSwizzle */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_84 /* RSSwizzle.m */,
-			);
-			path = RSSwizzle;
-			sourceTree = "<group>";
-		};
-		OBJ_85 /* domain_registry */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_86 /* private */,
-			);
-			path = domain_registry;
-			sourceTree = "<group>";
-		};
-		OBJ_86 /* private */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_87 /* init_registry_tables.c */,
-				OBJ_88 /* registry_search.c */,
-				OBJ_89 /* trie_search.c */,
-				OBJ_90 /* tsk_assert.c */,
-			);
-			path = private;
-			sourceTree = "<group>";
-		};
-		OBJ_91 /* Pinning */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_92 /* TSKSPKIHashCache.m */,
-				OBJ_93 /* ssl_pin_verifier.m */,
-			);
-			path = Pinning;
-			sourceTree = "<group>";
-		};
-		OBJ_94 /* Reporting */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_95 /* TSKBackgroundReporter.m */,
-				OBJ_96 /* TSKPinFailureReport.m */,
-				OBJ_97 /* TSKReportsRateLimiter.m */,
-				OBJ_98 /* reporting_utils.m */,
-				OBJ_99 /* vendor_identifier.m */,
-			);
-			path = Reporting;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		OBJ_173 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 0;
-			files = (
-				OBJ_174 /* TSKTrustKitConfig.h in Headers */,
-				OBJ_175 /* TSKTrustDecision.h in Headers */,
-				OBJ_176 /* TSKPinningValidatorResult.h in Headers */,
-				OBJ_177 /* TrustKit.h in Headers */,
-				OBJ_178 /* TSKPinningValidator.h in Headers */,
-				OBJ_179 /* TSKPinningValidatorCallback.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		"DeviceKit::DeviceKit" /* DeviceKit */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_136 /* Build configuration list for PBXNativeTarget "DeviceKit" */;
-			buildPhases = (
-				OBJ_139 /* Sources */,
-				OBJ_141 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = DeviceKit;
-			productName = DeviceKit;
-			productReference = "DeviceKit::DeviceKit::Product" /* DeviceKit.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		"DeviceKit::SwiftPMPackageDescription" /* DeviceKitPackageDescription */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_143 /* Build configuration list for PBXNativeTarget "DeviceKitPackageDescription" */;
-			buildPhases = (
-				OBJ_146 /* Sources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = DeviceKitPackageDescription;
-			productName = DeviceKitPackageDescription;
-			productType = "com.apple.product-type.framework";
-		};
-		"TrustKit::SwiftPMPackageDescription" /* TrustKitPackageDescription */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_182 /* Build configuration list for PBXNativeTarget "TrustKitPackageDescription" */;
-			buildPhases = (
-				OBJ_185 /* Sources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = TrustKitPackageDescription;
-			productName = TrustKitPackageDescription;
-			productType = "com.apple.product-type.framework";
-		};
-		"TrustKit::TrustKit" /* TrustKit */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_149 /* Build configuration list for PBXNativeTarget "TrustKit" */;
-			buildPhases = (
-				OBJ_152 /* Sources */,
-				OBJ_173 /* Headers */,
-				OBJ_180 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = TrustKit;
-			productName = TrustKit;
-			productReference = "TrustKit::TrustKit::Product" /* TrustKit.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		"ios-core-library::SwiftPMPackageDescription" /* ios-core-libraryPackageDescription */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_248 /* Build configuration list for PBXNativeTarget "ios-core-libraryPackageDescription" */;
-			buildPhases = (
-				OBJ_251 /* Sources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "ios-core-libraryPackageDescription";
-			productName = "ios-core-libraryPackageDescription";
-			productType = "com.apple.product-type.framework";
-		};
 		"ios-core-library::ios-core-library" /* ios-core-library */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = OBJ_188 /* Build configuration list for PBXNativeTarget "ios-core-library" */;
@@ -752,8 +429,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_245 /* PBXTargetDependency */,
-				OBJ_246 /* PBXTargetDependency */,
 			);
 			name = "ios-core-library";
 			productName = ios_core_library;
@@ -771,12 +446,10 @@
 			);
 			dependencies = (
 				OBJ_271 /* PBXTargetDependency */,
-				OBJ_272 /* PBXTargetDependency */,
-				OBJ_273 /* PBXTargetDependency */,
 			);
 			name = "ios-core-libraryTests";
 			productName = ios_core_libraryTests;
-			productReference = "ios-core-library::ios-core-libraryTests::Product" /* ios_core_libraryTests.xctest */;
+			productReference = "ios-core-library::ios-core-libraryTests::Product" /* ios-core-libraryTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -800,12 +473,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				"DeviceKit::DeviceKit" /* DeviceKit */,
-				"DeviceKit::SwiftPMPackageDescription" /* DeviceKitPackageDescription */,
-				"TrustKit::TrustKit" /* TrustKit */,
-				"TrustKit::SwiftPMPackageDescription" /* TrustKitPackageDescription */,
 				"ios-core-library::ios-core-library" /* ios-core-library */,
-				"ios-core-library::SwiftPMPackageDescription" /* ios-core-libraryPackageDescription */,
 				"ios-core-library::ios-core-libraryPackageTests::ProductTarget" /* ios-core-libraryPackageTests */,
 				"ios-core-library::ios-core-libraryTests" /* ios-core-libraryTests */,
 			);
@@ -813,57 +481,6 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		OBJ_139 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 0;
-			files = (
-				OBJ_140 /* Device.generated.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		OBJ_146 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 0;
-			files = (
-				OBJ_147 /* Package.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		OBJ_152 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 0;
-			files = (
-				OBJ_153 /* RSSwizzle.m in Sources */,
-				OBJ_154 /* init_registry_tables.c in Sources */,
-				OBJ_155 /* registry_search.c in Sources */,
-				OBJ_156 /* trie_search.c in Sources */,
-				OBJ_157 /* tsk_assert.c in Sources */,
-				OBJ_158 /* TSKSPKIHashCache.m in Sources */,
-				OBJ_159 /* ssl_pin_verifier.m in Sources */,
-				OBJ_160 /* TSKBackgroundReporter.m in Sources */,
-				OBJ_161 /* TSKPinFailureReport.m in Sources */,
-				OBJ_162 /* TSKReportsRateLimiter.m in Sources */,
-				OBJ_163 /* reporting_utils.m in Sources */,
-				OBJ_164 /* vendor_identifier.m in Sources */,
-				OBJ_165 /* TSKNSURLConnectionDelegateProxy.m in Sources */,
-				OBJ_166 /* TSKNSURLSessionDelegateProxy.m in Sources */,
-				OBJ_167 /* TSKPinningValidator.m in Sources */,
-				OBJ_168 /* TSKPinningValidatorResult.m in Sources */,
-				OBJ_169 /* TSKTrustKitConfig.m in Sources */,
-				OBJ_170 /* TrustKit.m in Sources */,
-				OBJ_171 /* configuration_utils.m in Sources */,
-				OBJ_172 /* parse_configuration.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		OBJ_185 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 0;
-			files = (
-				OBJ_186 /* Package.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		OBJ_191 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
@@ -922,14 +539,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_251 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 0;
-			files = (
-				OBJ_252 /* Package.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		OBJ_262 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
@@ -944,16 +553,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		OBJ_245 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = "TrustKit::TrustKit" /* TrustKit */;
-			targetProxy = 5806BDAD262496CF004BCE74 /* PBXContainerItemProxy */;
-		};
-		OBJ_246 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = "DeviceKit::DeviceKit" /* DeviceKit */;
-			targetProxy = 5806BDAE262496CF004BCE74 /* PBXContainerItemProxy */;
-		};
 		OBJ_257 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "ios-core-library::ios-core-libraryTests" /* ios-core-libraryTests */;
@@ -964,175 +563,9 @@
 			target = "ios-core-library::ios-core-library" /* ios-core-library */;
 			targetProxy = 5806BDAF262496CF004BCE74 /* PBXContainerItemProxy */;
 		};
-		OBJ_272 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = "TrustKit::TrustKit" /* TrustKit */;
-			targetProxy = 5806BDB0262496CF004BCE74 /* PBXContainerItemProxy */;
-		};
-		OBJ_273 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = "DeviceKit::DeviceKit" /* DeviceKit */;
-			targetProxy = 5806BDB1262496CF004BCE74 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		OBJ_137 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = "ios-core-library.xcodeproj/DeviceKit_Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = DeviceKit;
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 5.0;
-				TARGET_NAME = DeviceKit;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Debug;
-		};
-		OBJ_138 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = "ios-core-library.xcodeproj/DeviceKit_Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = DeviceKit;
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				SWIFT_VERSION = 5.0;
-				TARGET_NAME = DeviceKit;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Release;
-		};
-		OBJ_144 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -sdk /Applications/Xcode_12.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -package-description-version 5.0.0";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		OBJ_145 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -sdk /Applications/Xcode_12.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -package-description-version 5.0.0";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		OBJ_150 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				DEFINES_MODULE = YES;
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/.build/checkouts/TrustKit/TrustKit/public",
-				);
-				INFOPLIST_FILE = "ios-core-library.xcodeproj/TrustKit_Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = TrustKit;
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				TARGET_NAME = TrustKit;
-				TVOS_DEPLOYMENT_TARGET = 11.0;
-				WATCHOS_DEPLOYMENT_TARGET = 4.0;
-			};
-			name = Debug;
-		};
-		OBJ_151 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				DEFINES_MODULE = YES;
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SRCROOT)/.build/checkouts/TrustKit/TrustKit/public",
-				);
-				INFOPLIST_FILE = "ios-core-library.xcodeproj/TrustKit_Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = TrustKit;
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
-				TARGET_NAME = TrustKit;
-				TVOS_DEPLOYMENT_TARGET = 11.0;
-				WATCHOS_DEPLOYMENT_TARGET = 4.0;
-			};
-			name = Release;
-		};
-		OBJ_183 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -sdk /Applications/Xcode_12.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -package-description-version 5.1.0";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		OBJ_184 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -sdk /Applications/Xcode_12.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -package-description-version 5.1.0";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 		OBJ_189 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1192,24 +625,6 @@
 				TARGET_NAME = "ios-core-library";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Release;
-		};
-		OBJ_249 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -sdk /Applications/Xcode_12.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -package-description-version 5.3.0";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		OBJ_250 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -sdk /Applications/Xcode_12.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -package-description-version 5.3.0";
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1335,42 +750,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		OBJ_136 /* Build configuration list for PBXNativeTarget "DeviceKit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_137 /* Debug */,
-				OBJ_138 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		OBJ_143 /* Build configuration list for PBXNativeTarget "DeviceKitPackageDescription" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_144 /* Debug */,
-				OBJ_145 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		OBJ_149 /* Build configuration list for PBXNativeTarget "TrustKit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_150 /* Debug */,
-				OBJ_151 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		OBJ_182 /* Build configuration list for PBXNativeTarget "TrustKitPackageDescription" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_183 /* Debug */,
-				OBJ_184 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		OBJ_188 /* Build configuration list for PBXNativeTarget "ios-core-library" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1385,15 +764,6 @@
 			buildConfigurations = (
 				OBJ_3 /* Debug */,
 				OBJ_4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		OBJ_248 /* Build configuration list for PBXNativeTarget "ios-core-libraryPackageDescription" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_249 /* Debug */,
-				OBJ_250 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

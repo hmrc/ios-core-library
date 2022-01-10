@@ -78,7 +78,13 @@ class CoreNetworkServiceTests: CoreUnitTestCase {
         sut = MobileCore.Injection.Service.network.injectedObject()
         analyticsDelegate = NetworkAnalyticsDelegate()
         auditDelegate = NetworkAuditDelegate()
-        MobileCore.Network.configure(analyticsDelegate: analyticsDelegate, auditDelegate: auditDelegate)
+        MobileCore.Network.configure(
+            responseHandler:
+                MobileCore.Network.ResponseHandler(
+                    auditDelegate: auditDelegate,
+                    analyticsDelegate: analyticsDelegate
+                )
+        )
 
         // swiftlint:disable:next force_try
         defaultData = try! JSONSerialization.data(withJSONObject: ["key": "value"], options: .prettyPrinted)
@@ -233,6 +239,64 @@ class CoreNetworkServiceTests: CoreUnitTestCase {
                 }
                 return nil
             })
+        }
+    }
+
+    func test_521FromServiceIsTreatedAsShuttered() {
+        assertWhenRequestMade(
+        result: 521,
+        result: nil,
+        description: "521 should be treated as Shuttered"
+        ) { error, response, _, _  in
+            guard response == nil else {
+                XCTFail("Shouldnt be a response")
+                return
+            }
+
+            guard let error = error else {
+                XCTFail("No error returned")
+                return
+            }
+            guard let serviceError = error as? MobileCore.Network.ServiceError else {
+                XCTFail("Returned an unexpected type of error")
+                return
+            }
+            
+            switch serviceError {
+            case .shuttered:
+                break
+            default:
+                XCTFail("Returned an unexpected type of error")
+            }
+        }
+    }
+    
+    func test_523FromServiceIsTreatedAsShuttered() {
+        assertWhenRequestMade(
+        result: 523,
+        result: nil,
+        description: "523 should be treated as Shuttered"
+        ) { error, response, _, _  in
+            guard response == nil else {
+                XCTFail("Shouldnt be a response")
+                return
+            }
+
+            guard let error = error else {
+                XCTFail("No error returned")
+                return
+            }
+            guard let serviceError = error as? MobileCore.Network.ServiceError else {
+                XCTFail("Returned an unexpected type of error")
+                return
+            }
+            
+            switch serviceError {
+            case .shuttered:
+                break
+            default:
+                XCTFail("Returned an unexpected type of error")
+            }
         }
     }
 
