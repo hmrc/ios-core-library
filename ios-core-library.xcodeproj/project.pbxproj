@@ -22,6 +22,7 @@
 
 /* Begin PBXBuildFile section */
 		5806BDBC2624AC6E004BCE74 /* CoreResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5806BDBB2624AC6E004BCE74 /* CoreResponseHandler.swift */; };
+		5893321C27EA25900042B9EF /* LocalisationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5893321B27EA25900042B9EF /* LocalisationService.swift */; };
 		58F0DBC22758FD9D008ECD4F /* RangeReplaceableCollection+HMRC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F0DBC12758FD9D008ECD4F /* RangeReplaceableCollection+HMRC.swift */; };
 		OBJ_192 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* Configuration.swift */; };
 		OBJ_193 /* Enum+CaseCountable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* Enum+CaseCountable.swift */; };
@@ -98,6 +99,7 @@
 
 /* Begin PBXFileReference section */
 		5806BDBB2624AC6E004BCE74 /* CoreResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreResponseHandler.swift; sourceTree = "<group>"; };
+		5893321B27EA25900042B9EF /* LocalisationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalisationService.swift; sourceTree = "<group>"; };
 		58F0DBC12758FD9D008ECD4F /* RangeReplaceableCollection+HMRC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RangeReplaceableCollection+HMRC.swift"; sourceTree = "<group>"; };
 		OBJ_10 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		OBJ_12 /* Enum+CaseCountable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enum+CaseCountable.swift"; sourceTree = "<group>"; };
@@ -338,6 +340,7 @@
 				OBJ_64 /* FraudPreventionService.swift */,
 				OBJ_65 /* InfoPListService.swift */,
 				OBJ_66 /* JourneyService.swift */,
+				5893321B27EA25900042B9EF /* LocalisationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				OBJ_208 /* Namespaces.swift in Sources */,
 				OBJ_209 /* BaseNetworkService.swift in Sources */,
 				OBJ_210 /* CertificatePinningService.swift in Sources */,
+				5893321C27EA25900042B9EF /* LocalisationService.swift in Sources */,
 				OBJ_211 /* CoreNetworkService.swift in Sources */,
 				OBJ_212 /* HTTPRequestBuilder.swift in Sources */,
 				OBJ_213 /* HTTPService.swift in Sources */,

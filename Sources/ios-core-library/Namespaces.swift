@@ -55,4 +55,5 @@ public struct MobileCore {
         public struct Info { }
     }
     public struct Date { }
+    public struct Localisation { }
 }

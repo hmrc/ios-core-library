@@ -88,6 +88,11 @@ extension CoreConfigCacheInjected {
     public var coreConfigCache: PINCache { return MobileCore.Injection.Service.coreConfig.injectedObject() }
 }
 
+public protocol LocalisationServiceInjected {}
+extension LocalisationServiceInjected {
+    public var localisationService: LocalisationService { return MobileCore.Injection.Service.localisation.injectedObject() }
+}
+
 extension MobileCore.Injection {
     //public static let <#name#> = Injector { return MobileCore.<#Real Class#>.Service() }
 
@@ -107,5 +112,6 @@ extension MobileCore.Injection {
         public static let coreConfig = Injector("CoreConfigCache") {
             return PINCache(name: "CoreConfigCache", rootPath: StoragePath.permanent)
         }
+        public static let localisation = Injector("LocalisationService") { return MobileCore.Localisation.Service() }
     }
 }
