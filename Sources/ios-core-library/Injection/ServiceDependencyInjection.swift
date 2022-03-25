@@ -25,87 +25,93 @@ import PINCache
 
 public protocol JourneyServiceInjected {}
 extension JourneyServiceInjected {
-    public var journeyService: JourneyService { return MobileCore.Injection.Service.journey.injectedObject() }
+    public var journeyService: JourneyService { MobileCore.Injection.Service.journey.injectedObject() }
 }
 
 public protocol ApplicationStateServiceInjected {}
 extension ApplicationStateServiceInjected {
-    public var applicationState: ApplicationStateService { return MobileCore.Injection.Service.applicationState.injectedObject() }
+    public var applicationState: ApplicationStateService { MobileCore.Injection.Service.applicationState.injectedObject() }
 }
 
 public protocol CoreNetworkServiceInjected {}
 extension CoreNetworkServiceInjected {
-    public var coreNetworkService: CoreNetworkService { return MobileCore.Injection.Service.network.injectedObject() }
+    public var coreNetworkService: CoreNetworkService { MobileCore.Injection.Service.network.injectedObject() }
 }
 
 public protocol DeviceInfoServiceInjected {}
 extension DeviceInfoServiceInjected {
-    public var deviceInfo: DeviceInfoService { return MobileCore.Injection.Service.deviceInfo.injectedObject() }
+    public var deviceInfo: DeviceInfoService { MobileCore.Injection.Service.deviceInfo.injectedObject() }
 }
 
 public protocol CoreHTTPServiceInjected {}
 extension CoreHTTPServiceInjected {
-    public var coreHTTPService: CoreHTTPService { return MobileCore.Injection.Service.http.injectedObject() }
+    public var coreHTTPService: CoreHTTPService { MobileCore.Injection.Service.http.injectedObject() }
 }
 
 public protocol InfoPListServiceInjected {}
 extension InfoPListServiceInjected {
-    public var infoPlist: InfoPListService { return MobileCore.Injection.Service.infoPlist.injectedObject() }
+    public var infoPlist: InfoPListService { MobileCore.Injection.Service.infoPlist.injectedObject() }
 }
 
 public protocol AppInfoServiceInjected {}
 extension AppInfoServiceInjected {
-    public var appInfo: AppInfoService { return MobileCore.Injection.Service.appInfo.injectedObject() }
+    public var appInfo: AppInfoService { MobileCore.Injection.Service.appInfo.injectedObject() }
 }
 
 public protocol DateServiceInjected {}
 extension DateServiceInjected {
-    public var dateService: DateService { return MobileCore.Injection.Service.date.injectedObject() }
+    public var dateService: DateService { MobileCore.Injection.Service.date.injectedObject() }
 }
 
 public protocol FraudPreventionServiceInjected {}
 extension FraudPreventionServiceInjected {
-    public var fraudPrevention: FraudPreventionService { return MobileCore.Injection.Service.fraudPrevention.injectedObject() }
+    public var fraudPrevention: FraudPreventionService { MobileCore.Injection.Service.fraudPrevention.injectedObject() }
 }
 
 public protocol NetworkSpinnerInjected {}
 extension NetworkSpinnerInjected {
-    public var networkSpinner: NetworkSpinner { return MobileCore.Injection.Service.networkSpinner.injectedObject() }
+    public var networkSpinner: NetworkSpinner { MobileCore.Injection.Service.networkSpinner.injectedObject() }
 }
 
 public protocol NetworkSpinnerPolicyInjected {}
 extension NetworkSpinnerPolicyInjected {
-    public var networkSpinnerPolicy: NetworkSpinnerPolicy { return MobileCore.Injection.Service.networkSpinnerPolicy.injectedObject() }
+    public var networkSpinnerPolicy: NetworkSpinnerPolicy { MobileCore.Injection.Service.networkSpinnerPolicy.injectedObject() }
 }
 
 public protocol CertificatePinningInjected {}
 extension CertificatePinningInjected {
-    public var certificatePinningService: CertificatePinningService { return MobileCore.Injection.Service.certificatePinning.injectedObject() }
+    public var certificatePinningService: CertificatePinningService { MobileCore.Injection.Service.certificatePinning.injectedObject() }
 }
 
 public protocol CoreConfigCacheInjected {}
 extension CoreConfigCacheInjected {
-    public var coreConfigCache: PINCache { return MobileCore.Injection.Service.coreConfig.injectedObject() }
+    public var coreConfigCache: PINCache { MobileCore.Injection.Service.coreConfig.injectedObject() }
+}
+
+public protocol LocalisationServiceInjected {}
+extension LocalisationServiceInjected {
+    public var localisationService: LocalisationService { MobileCore.Injection.Service.localisation.injectedObject() }
 }
 
 extension MobileCore.Injection {
     //public static let <#name#> = Injector { return MobileCore.<#Real Class#>.Service() }
 
     public struct Service {
-        public static let http = Injector("HTTPService") { return MobileCore.HTTP.Service() }
-        public static let network = Injector("NetworkService") { return MobileCore.Network.Service() }
-        public static let journey = Injector("JourneyService") { return MobileCore.Journey.Service() }
-        public static let deviceInfo = Injector("DeviceInfoService") { return MobileCore.Device.Info.Service.standard() }
-        public static let applicationState = Injector("ApplicationStateService") { return MobileCore.Application.State.Service() }
-        public static let infoPlist = Injector("InfoPlistService") { return MobileCore.InfoPList.Service() }
-        public static let appInfo = Injector("AppInfoService") { return MobileCore.AppInfo.Service() }
-        public static let date = Injector("DateService") { return MobileCore.Date.Service() }
-        public static let fraudPrevention = Injector("FraudPreventionService") { return MobileCore.FraudPrevention.Service() }
-        public static let networkSpinner = Injector("HTTPService") { return MobileCore.Network.Spinner.Empty() }
-        public static let networkSpinnerPolicy = Injector("NetworkSpinnerService") { return MobileCore.Network.Spinner.Policy() }
-        public static let certificatePinning = Injector("CertificatePinningService") { return MobileCore.HTTP.CertificatePinning() }
+        public static let http = Injector("HTTPService") { MobileCore.HTTP.Service() }
+        public static let network = Injector("NetworkService") { MobileCore.Network.Service() }
+        public static let journey = Injector("JourneyService") { MobileCore.Journey.Service() }
+        public static let deviceInfo = Injector("DeviceInfoService") { MobileCore.Device.Info.Service.standard() }
+        public static let applicationState = Injector("ApplicationStateService") { MobileCore.Application.State.Service() }
+        public static let infoPlist = Injector("InfoPlistService") { MobileCore.InfoPList.Service() }
+        public static let appInfo = Injector("AppInfoService") { MobileCore.AppInfo.Service() }
+        public static let date = Injector("DateService") { MobileCore.Date.Service() }
+        public static let fraudPrevention = Injector("FraudPreventionService") { MobileCore.FraudPrevention.Service() }
+        public static let networkSpinner = Injector("HTTPService") { MobileCore.Network.Spinner.Empty() }
+        public static let networkSpinnerPolicy = Injector("NetworkSpinnerService") { MobileCore.Network.Spinner.Policy() }
+        public static let certificatePinning = Injector("CertificatePinningService") { MobileCore.HTTP.CertificatePinning() }
         public static let coreConfig = Injector("CoreConfigCache") {
             return PINCache(name: "CoreConfigCache", rootPath: StoragePath.permanent)
         }
+        public static let localisation = Injector("LocalisationService") { MobileCore.Localisation.Service() }
     }
 }
