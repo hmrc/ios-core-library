@@ -29,24 +29,24 @@ extension MobileCore.Localisation {
         case welsh = "Welsh"
     }
     public class Service: LocalisationService, CoreConfigCacheInjected {
-        private enum Keys: String {
-            case shouldShowLanguageSwitcher
-            case shouldShowContentInWelsh
+        private struct Keys {
+            static let shouldShowLanguageSwitcher = "shouldShowLanguageSwitcher"
+            static let shouldShowContentInWelsh = "shouldShowContentInWelsh"
         }
         public var shouldShowLanguageSwitcher: Bool {
             get {
-                coreConfigCache.object(forKey: Keys.shouldShowLanguageSwitcher.rawValue) as? Bool ?? false
+                coreConfigCache.object(forKey: Keys.shouldShowLanguageSwitcher) as? Bool ?? false
             }
             set {
-                coreConfigCache.setObject(newValue, forKey: Keys.shouldShowLanguageSwitcher.rawValue)
+                coreConfigCache.setObject(newValue, forKey: Keys.shouldShowLanguageSwitcher)
             }
         }
         public var shouldShowContentInWelsh: Bool {
             get {
-                coreConfigCache.object(forKey: Keys.shouldShowContentInWelsh.rawValue) as? Bool ?? false
+                coreConfigCache.object(forKey: Keys.shouldShowContentInWelsh) as? Bool ?? false
             }
             set {
-                coreConfigCache.setObject(newValue, forKey: Keys.shouldShowContentInWelsh.rawValue)
+                coreConfigCache.setObject(newValue, forKey: Keys.shouldShowContentInWelsh)
             }
         }
         public func string(_ key: String) -> String {
