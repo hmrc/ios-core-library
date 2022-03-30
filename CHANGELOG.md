@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [2.7.1] - 2022-03-30Z
 ### Fixed
 - Allowed `LocalisationService` to be subclassed so it can be mocked
 
