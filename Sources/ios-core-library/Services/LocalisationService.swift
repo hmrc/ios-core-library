@@ -28,12 +28,12 @@ extension MobileCore.Localisation {
         case english = "English"
         case welsh = "Welsh"
     }
-    public class Service: LocalisationService, CoreConfigCacheInjected {
+    open class Service: LocalisationService, CoreConfigCacheInjected {
         private struct Keys {
             static let shouldShowLanguageSwitcher = "shouldShowLanguageSwitcher"
             static let shouldShowContentInWelsh = "shouldShowContentInWelsh"
         }
-        public var shouldShowLanguageSwitcher: Bool {
+        open var shouldShowLanguageSwitcher: Bool {
             get {
                 coreConfigCache.object(forKey: Keys.shouldShowLanguageSwitcher) as? Bool ?? false
             }
@@ -41,7 +41,7 @@ extension MobileCore.Localisation {
                 coreConfigCache.setObject(newValue, forKey: Keys.shouldShowLanguageSwitcher)
             }
         }
-        public var shouldShowContentInWelsh: Bool {
+        open var shouldShowContentInWelsh: Bool {
             get {
                 coreConfigCache.object(forKey: Keys.shouldShowContentInWelsh) as? Bool ?? false
             }
@@ -49,10 +49,13 @@ extension MobileCore.Localisation {
                 coreConfigCache.setObject(newValue, forKey: Keys.shouldShowContentInWelsh)
             }
         }
-        public func string(_ key: String) -> String {
+        public init() {
+
+        }
+        open func string(_ key: String) -> String {
             return string(key, language: shouldShowContentInWelsh ? .welsh : .english)
         }
-        public func string(_ key: String, language: MobileCore.Localisation.Language) -> String {
+        open func string(_ key: String, language: MobileCore.Localisation.Language) -> String {
             return NSLocalizedString(
                 key,
                 tableName: language.rawValue,
