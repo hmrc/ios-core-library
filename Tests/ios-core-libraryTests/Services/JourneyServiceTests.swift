@@ -33,7 +33,6 @@ class JourneyServiceTests: CoreUnitTestCase {
     override func setUp() {
         super.setUp()
         userDefaults = .init()
-        MobileCore.Injection.Service.userDefaults.inject(userDefaults)
         
         service = MobileCore.Injection.Service.journey.injectedObject() as JourneyService
         service.set(id: initialJourneyId)
