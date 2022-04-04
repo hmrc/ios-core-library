@@ -6,6 +6,10 @@
 
 Library for sharing lower level business code between various cross-gov applications.
 
+--
+# Make sure you open `Package.swift` NOT the `.xcodeproj` otherwise Xcode wont work.
+--
+
 # Requirements
 
 - iOS 11.0+
@@ -17,7 +21,6 @@ Library for sharing lower level business code between various cross-gov applicat
 ```swift
 https://github.com/hmrc/ios-core-library
 ```
-
 
 # Usage
 Check the [wiki](https://github.com/hmrc/ios-core-library/wiki) with a breakdown on the different helpers avaliable within this library
