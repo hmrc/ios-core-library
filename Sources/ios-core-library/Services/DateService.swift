@@ -17,7 +17,7 @@
 import Foundation
 
 public protocol DateService {
-    var britishLocale: Locale { get }
+    var currentLocale: Locale { get }
     var usPosixLocale: Locale { get }
     var britishTimeZone: TimeZone { get }
     var currentDate: Date { get }
@@ -50,11 +50,16 @@ public protocol DateService {
 }
 
 extension MobileCore.Date {
-    open class Service: DateService {
+    open class Service: DateService, LocalisationServiceInjected {
 
         public init() {}
 
-        open var britishLocale: Locale = Constants.BritishLocale
+        open var currentLocale: Locale {
+            if localisationService.shouldShowLanguageSwitcher && localisationService.shouldShowContentInWelsh  {
+                return Constants.WelshLocale
+            }
+            return Constants.BritishLocale
+        }
 
         open var usPosixLocale: Locale = Constants.USPosixLocale
 
@@ -81,7 +86,7 @@ extension MobileCore.Date {
         /// Date formatter with template: "d MMMM"
         open var dMMMMFormatter: Foundation.DateFormatter {
             let formatter = Foundation.DateFormatter()
-            formatter.locale = Constants.BritishLocale
+            formatter.locale = currentLocale
             formatter.dateFormat = "d MMMM"
             formatter.timeZone = Constants.BritishTimeZone
             return formatter
@@ -103,7 +108,7 @@ extension MobileCore.Date {
         open var longMonthYearFormatter: Foundation.DateFormatter {
             let formatter = Foundation.DateFormatter()
             formatter.timeStyle = .none
-            formatter.locale = Constants.BritishLocale
+            formatter.locale = currentLocale
             formatter.dateFormat = "MMMM,yyyy"
             return formatter
         }
@@ -113,7 +118,7 @@ extension MobileCore.Date {
             let formatter = Foundation.DateFormatter()
             formatter.dateStyle = .long
             formatter.timeStyle = .none
-            formatter.locale = Constants.BritishLocale
+            formatter.locale = currentLocale
             formatter.timeZone = currentTimeZone
             return formatter
         }
@@ -123,7 +128,7 @@ extension MobileCore.Date {
             let formatter = Foundation.DateFormatter()
             formatter.dateStyle = .long
             formatter.timeStyle = .none
-            formatter.locale = Constants.BritishLocale
+            formatter.locale = currentLocale
             formatter.timeZone = Constants.BritishTimeZone
             return formatter
         }
@@ -133,7 +138,7 @@ extension MobileCore.Date {
             let formatter = Foundation.DateFormatter()
             formatter.dateStyle = .long
             formatter.timeStyle = .none
-            formatter.locale = Constants.BritishLocale
+            formatter.locale = currentLocale
             formatter.timeZone = TimeZone(secondsFromGMT: 0)
             return formatter
         }
@@ -142,7 +147,7 @@ extension MobileCore.Date {
         open var timeFormatter: Foundation.DateFormatter {
             let formatter = Foundation.DateFormatter()
             formatter.timeStyle = .none
-            formatter.locale = Constants.BritishLocale
+            formatter.locale = currentLocale
             formatter.dateFormat = "hh:mma"
             return formatter
         }
@@ -152,7 +157,7 @@ extension MobileCore.Date {
             let formatter = Foundation.DateFormatter()
             formatter.dateStyle = .medium
             formatter.timeStyle = .none
-            formatter.locale = Constants.BritishLocale
+            formatter.locale = currentLocale
             formatter.timeZone = Constants.BritishTimeZone
             formatter.doesRelativeDateFormatting = true
             return formatter
@@ -221,7 +226,7 @@ extension MobileCore.Date {
         // Year only formatter
         open var yearDateFormatter: Foundation.DateFormatter {
             let formatter = Foundation.DateFormatter()
-            formatter.locale = Constants.BritishLocale
+            formatter.locale = currentLocale
             formatter.dateFormat = "yyyy"
             return formatter
         }
@@ -229,7 +234,7 @@ extension MobileCore.Date {
         // Slash date converter
         open var forwardSlashDateFormatter: Foundation.DateFormatter {
             let formatter = Foundation.DateFormatter()
-            formatter.locale = Constants.BritishLocale
+            formatter.locale = currentLocale
             formatter.dateFormat = "d/MM/yyyy"
             return formatter
         }
@@ -237,7 +242,7 @@ extension MobileCore.Date {
         // HTTP header formatter
         open var httpHeaderDateFormatter: Foundation.DateFormatter {
             let formatter = Foundation.DateFormatter()
-            formatter.locale = Constants.BritishLocale
+            formatter.locale = currentLocale
             formatter.dateFormat = "E, dd MMM yyyy HH:mm:ssZ"
             return formatter
         }
@@ -311,6 +316,7 @@ extension MobileCore.Date {
 
         private struct Constants {
             static let BritishLocale = Locale(identifier: "en_GB")
+            static let WelshLocale = Locale(identifier: "cy")
             static let USPosixLocale = Locale(identifier: "en_US_POSIX")
             static let BritishTimeZone = TimeZone(identifier: "BST")
         }

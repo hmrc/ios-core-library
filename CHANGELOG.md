@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Changed
+- `DateService` now takes localisation into account. If both `shouldShowLanguageSwitcher` and `shouldShowContentInWelsh` are true, it will return dates in Welsh. Otherwise, it continues to return English.
 
 ## [2.7.1] - 2022-03-30Z
 ### Fixed

@@ -39,6 +39,7 @@ extension MobileCore.Localisation {
             }
             set {
                 coreConfigCache.setObject(newValue, forKey: Keys.shouldShowLanguageSwitcher)
+                shouldShowContentInWelsh = newValue
             }
         }
         open var shouldShowContentInWelsh: Bool {
