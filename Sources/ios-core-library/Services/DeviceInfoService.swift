@@ -45,12 +45,13 @@ extension MobileCore.Device.Info {
         }
 
         static func standard() -> Service {
-            guard !MobileCore.config.uiTests.areRunning else {
+            if MobileCore.config.uiTests.areRunning && !MobileCore.config.uiTests.useRealIDs {
                 return Service(
                     appVersion: "UI_TEST_APP_VERSION",
                     operatingSystem: "UI_TEST_OS",
                     device: Device.current.description)
             }
+
             return Service(
                 appVersion: UIApplication.versionBuild(),
                 operatingSystem: UIDevice.current.systemVersion,
