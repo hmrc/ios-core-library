@@ -36,9 +36,11 @@ extension MobileCore {
 
         open class UITests {
             public let areRunning: Bool
+            public let useRealIDs: Bool
 
-            public init(areRunning: Bool) {
+            public init(areRunning: Bool, useRealIDs: Bool = false) {
                 self.areRunning = areRunning
+                self.useRealIDs = useRealIDs
             }
         }
 
