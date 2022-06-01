@@ -15,7 +15,11 @@
  */
 
 public struct Log {
-    private static let configurableLogService = ConfigurableLogService()
+    private static var configurableLogService = ConfigurableLogService()
+
+    public static func reset() {
+        configurableLogService = ConfigurableLogService()
+    }
 
     public static func setup(with services: [LogService] = [], includeConsole: Bool = false) {
         var servicesToUse = services
