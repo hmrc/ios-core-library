@@ -5,10 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- Localisation settings are now stored on a per user basis 
 
 ## [2.8.1] - 2022-04-25Z
 ### Added
-- Add ability to use real IDs when UI testing with `-useRealIDs` launch argument 
+- Add ability to use real IDs when UI testing with `-useRealIDs` launch argument
 
 ## [2.8.0] - 2022-04-04Z
 ### Changed
