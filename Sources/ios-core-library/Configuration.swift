@@ -19,6 +19,8 @@ import Foundation
 extension MobileCore {
     public class Configuration {
 
+        public var hashedUserIdentifier: String?
+
         public struct AppConfig {
             public let appKeychain: KeychainAccess
 

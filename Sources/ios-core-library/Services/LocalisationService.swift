@@ -29,25 +29,33 @@ extension MobileCore.Localisation {
         case welsh = "Welsh"
     }
     open class Service: LocalisationService, CoreConfigCacheInjected {
-        private struct Keys {
-            static let shouldShowLanguageSwitcher = "shouldShowLanguageSwitcher"
-            static let shouldShowContentInWelsh = "shouldShowContentInWelsh"
+        private enum Keys: String {
+            case shouldShowLanguageSwitcher = "shouldShowLanguageSwitcher"
+            case shouldShowContentInWelsh = "shouldShowContentInWelsh"
+
+            func userSpecificKey() -> String {
+                if let hashedUserIdentifier = MobileCore.config.hashedUserIdentifier {
+                    return self.rawValue + "_" + hashedUserIdentifier
+                } else {
+                    return self.rawValue
+                }
+            }
         }
         open var shouldShowLanguageSwitcher: Bool {
             get {
-                coreConfigCache.object(forKey: Keys.shouldShowLanguageSwitcher) as? Bool ?? false
+                coreConfigCache.object(forKey: Keys.shouldShowLanguageSwitcher.userSpecificKey()) as? Bool ?? false
             }
             set {
-                coreConfigCache.setObject(newValue, forKey: Keys.shouldShowLanguageSwitcher)
+                coreConfigCache.setObject(newValue, forKey: Keys.shouldShowLanguageSwitcher.userSpecificKey())
                 shouldShowContentInWelsh = newValue
             }
         }
         open var shouldShowContentInWelsh: Bool {
             get {
-                coreConfigCache.object(forKey: Keys.shouldShowContentInWelsh) as? Bool ?? false
+                coreConfigCache.object(forKey: Keys.shouldShowContentInWelsh.userSpecificKey()) as? Bool ?? false
             }
             set {
-                coreConfigCache.setObject(newValue, forKey: Keys.shouldShowContentInWelsh)
+                coreConfigCache.setObject(newValue, forKey: Keys.shouldShowContentInWelsh.userSpecificKey())
             }
         }
         public init() {
