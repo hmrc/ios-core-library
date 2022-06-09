@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [2.8.3] - 2022-06-09Z
 ### Added
 - Localisation settings are now stored on a per user basis 
 
