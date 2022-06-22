@@ -28,6 +28,7 @@ class DateServiceTests: CoreUnitTestCase {
 
     func test_currentLocal_whenEnglish() {
         // When
+        mockLocalisationService.override_shouldShowLanguageSwitcher = false
         mockLocalisationService.override_shouldShowContentInWelsh = false
 
         // Then
@@ -36,6 +37,7 @@ class DateServiceTests: CoreUnitTestCase {
 
     func test_currentLocal_whenWelsh() {
         // When
+        mockLocalisationService.override_shouldShowLanguageSwitcher = true
         mockLocalisationService.override_shouldShowContentInWelsh = true
 
         // Then
@@ -44,6 +46,7 @@ class DateServiceTests: CoreUnitTestCase {
 
     func test_formattedDate_whenEnglish() {
         // Given
+        mockLocalisationService.override_shouldShowLanguageSwitcher = false
         mockLocalisationService.override_shouldShowContentInWelsh = false
         let middayOn12thApril2017 = Date(timeIntervalSince1970: 1491998400)
 
@@ -56,6 +59,7 @@ class DateServiceTests: CoreUnitTestCase {
 
     func test_formattedDate_whenWelsh() {
         // Given
+        mockLocalisationService.override_shouldShowLanguageSwitcher = true
         mockLocalisationService.override_shouldShowContentInWelsh = true
         let middayOn12thApril2017 = Date(timeIntervalSince1970: 1491998400)
 

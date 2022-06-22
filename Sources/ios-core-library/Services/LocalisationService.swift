@@ -17,6 +17,7 @@
 import Foundation
 
 public protocol LocalisationService {
+    var shouldShowLanguageSwitcher: Bool { get set }
     var shouldShowContentInWelsh: Bool { get set }
     func string(_ key: String) -> String
     func string(_ key: String, language: MobileCore.Localisation.Language) -> String
@@ -29,6 +30,7 @@ extension MobileCore.Localisation {
     }
     open class Service: LocalisationService, CoreConfigCacheInjected {
         private enum Keys: String {
+            case shouldShowLanguageSwitcher = "shouldShowLanguageSwitcher"
             case shouldShowContentInWelsh = "shouldShowContentInWelsh"
 
             func userSpecificKey() -> String {
@@ -37,6 +39,15 @@ extension MobileCore.Localisation {
                 } else {
                     return self.rawValue
                 }
+            }
+        }
+        open var shouldShowLanguageSwitcher: Bool {
+            get {
+                coreConfigCache.object(forKey: Keys.shouldShowLanguageSwitcher.userSpecificKey()) as? Bool ?? false
+            }
+            set {
+                coreConfigCache.setObject(newValue, forKey: Keys.shouldShowLanguageSwitcher.userSpecificKey())
+                shouldShowContentInWelsh = newValue
             }
         }
         open var shouldShowContentInWelsh: Bool {
