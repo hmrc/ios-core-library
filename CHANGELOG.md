@@ -5,10 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Changed
+- `DateService` now only uses Welsh locale when `shouldCurrentSceneDisplayWelshDates` is true
 
 ## [2.8.3] - 2022-06-09Z
 ### Added
-- Localisation settings are now stored on a per user basis 
+- Localisation settings are now stored on a per user basis
 
 ## [2.8.1] - 2022-04-25Z
 ### Added
