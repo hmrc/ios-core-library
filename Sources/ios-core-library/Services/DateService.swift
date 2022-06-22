@@ -17,6 +17,7 @@
 import Foundation
 
 public protocol DateService {
+    var shouldCurrentSceneDisplayWelshDates: Bool { get set }
     var currentLocale: Locale { get }
     var usPosixLocale: Locale { get }
     var britishTimeZone: TimeZone { get }
@@ -54,11 +55,9 @@ extension MobileCore.Date {
 
         public init() {}
 
+        open var shouldCurrentSceneDisplayWelshDates: Bool = false
         open var currentLocale: Locale {
-            if localisationService.shouldShowLanguageSwitcher && localisationService.shouldShowContentInWelsh  {
-                return Constants.WelshLocale
-            }
-            return Constants.BritishLocale
+            shouldCurrentSceneDisplayWelshDates ? Constants.WelshLocale : Constants.BritishLocale
         }
 
         open var usPosixLocale: Locale = Constants.USPosixLocale
