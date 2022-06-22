@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [2.8.4] - 2022-06-22Z
 ### Changed
 - `DateService` now only uses Welsh locale when `shouldCurrentSceneDisplayWelshDates` is true
 
