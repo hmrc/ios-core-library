@@ -19,6 +19,7 @@ import Foundation
 public typealias HTTPHandler = ((Result<MobileCore.HTTP.Response, Error>) -> Void)
 
 public protocol CoreHTTPService {
+    var sessionService: MobileCore.Network.SessionConfigurationService { get }
     var urlSession: URLSession { get }
     func send(_ request: URLRequest,
               sessionType: MobileCore.Network.SessionType,
@@ -58,9 +59,12 @@ extension MobileCore.HTTP {
 
     open class Service: NSObject, CoreHTTPService, URLSessionDelegate, CertificatePinningInjected {
 
-        private let sessionService = MobileCore.Network.SessionConfigurationService()
+        public let sessionService = MobileCore.Network.SessionConfigurationService()
 
-        public lazy var urlSession = URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: nil)
+        public lazy var urlSession = URLSession(
+            configuration: sessionService.config(sessionType: .default),
+            delegate: self,
+            delegateQueue: nil)
 
         public func send(_ request: URLRequest,
                          sessionType: MobileCore.Network.SessionType,
@@ -83,8 +87,6 @@ extension MobileCore.HTTP {
                             identifier: UUID().uuidString)
                     self.customSessionRequest(sessionConfiguration: config,
                             request: request)
-                default:
-                    fatalError("Only `default` & `background` session types supported")
                 }
             }
         }

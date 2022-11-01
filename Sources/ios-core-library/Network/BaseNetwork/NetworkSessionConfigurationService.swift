@@ -17,7 +17,14 @@
 import UIKit
 
 public protocol NetworkSessionConfigurationService {
+    var modifySessionConfiguration: ((_ sessionConfig: URLSessionConfiguration) -> Void)? { get set }
     func config(sessionType: MobileCore.Network.SessionType, identifier: String) -> URLSessionConfiguration
+}
+
+extension NetworkSessionConfigurationService {
+    func config(sessionType: MobileCore.Network.SessionType) -> URLSessionConfiguration {
+        config(sessionType: sessionType, identifier: "")
+    }
 }
 
 extension MobileCore.Network {
@@ -28,14 +35,21 @@ extension MobileCore.Network {
     }
 
     open class SessionConfigurationService: NetworkSessionConfigurationService {
+        public var modifySessionConfiguration: ((URLSessionConfiguration) -> Void)?
 
         public func config(sessionType: SessionType, identifier: String) -> URLSessionConfiguration {
-            switch sessionType {
-            case .default:
-                return URLSessionConfiguration.default
-            case .background:
-                return URLSessionConfiguration.background(withIdentifier: identifier)
-            }
+            let sessionConfig: URLSessionConfiguration = {
+                switch sessionType {
+                case .default:
+                    return URLSessionConfiguration.default
+                case .background:
+                    return URLSessionConfiguration.background(withIdentifier: identifier)
+                }
+            }()
+            modifySessionConfiguration?(sessionConfig)
+            return sessionConfig
         }
+
+        public init() { }
     }
 }
