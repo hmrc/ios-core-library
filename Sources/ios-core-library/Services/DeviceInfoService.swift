@@ -20,6 +20,8 @@ import DeviceKit
 public protocol DeviceInfoService {
     var appInstallationId: String { get }
     var appVersion: String { get }
+    var buildNumber: String { get }
+    var versionBuild: String { get }
     var operatingSystem: String { get }
     var device: String { get }
     var screenPixelWidth: Int { get }
@@ -31,6 +33,8 @@ public protocol DeviceInfoService {
 extension MobileCore.Device.Info {
     public struct Service: DeviceInfoService {
         public let appVersion: String
+        public let buildNumber: String
+        public let versionBuild: String
         public let operatingSystem: String
         public let device: String
 
@@ -48,12 +52,16 @@ extension MobileCore.Device.Info {
             if MobileCore.config.uiTests.areRunning && !MobileCore.config.uiTests.useRealIDs {
                 return Service(
                     appVersion: "UI_TEST_APP_VERSION",
+                    buildNumber: "UI_TEST_BUILD_NUMBER",
+                    versionBuild: "UI_TEST_APP_VERSION (UI_TEST_BUILD_NUMBER)",
                     operatingSystem: "UI_TEST_OS",
                     device: Device.current.description)
             }
 
             return Service(
-                appVersion: UIApplication.versionBuild(),
+                appVersion: UIApplication.appVersion(),
+                buildNumber: UIApplication.appBuild(),
+                versionBuild: UIApplication.versionBuild(),
                 operatingSystem: UIDevice.current.systemVersion,
                 device: Device.current.description)
         }
