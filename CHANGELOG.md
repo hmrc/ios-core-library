@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [2.8.6] - 2023-01-13Z
 ### Changed
 - Exposed `appVersion` and `buildNumber` from `DeviceInfoService`
 
