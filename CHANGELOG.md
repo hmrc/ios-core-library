@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Changed
 - Exposed `appVersion` and `buildNumber` from `DeviceInfoService`
+- Forced `shouldShowLanguageSwitcher = true` when enabling Welsh mode from a signed out state
 
 ## [2.8.4] - 2022-06-22Z
 ### Changed
