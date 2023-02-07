@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [2.8.7] - 2023-02-07Z
 ### Changed
 - Exposed `appVersion` and `buildNumber` from `DeviceInfoService`
 - Forced `shouldShowLanguageSwitcher = true` when enabling Welsh mode from a signed out state
