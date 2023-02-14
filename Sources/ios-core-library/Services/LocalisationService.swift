@@ -32,22 +32,25 @@ extension MobileCore.Localisation {
         private enum Keys: String {
             case shouldShowLanguageSwitcher = "shouldShowLanguageSwitcher"
             case shouldShowContentInWelsh = "shouldShowContentInWelsh"
+            func callAsFunction() -> String {
+                rawValue
+            }
         }
         open var shouldShowLanguageSwitcher: Bool {
             get {
-                coreConfigCache.object(forKey: Keys.shouldShowLanguageSwitcher) as? Bool ?? false
+                coreConfigCache.object(forKey: Keys.shouldShowLanguageSwitcher()) as? Bool ?? false
             }
             set {
-                coreConfigCache.setObject(newValue, forKey: Keys.shouldShowLanguageSwitcher)
+                coreConfigCache.setObject(newValue, forKey: Keys.shouldShowLanguageSwitcher())
                 shouldShowContentInWelsh = newValue
             }
         }
         open var shouldShowContentInWelsh: Bool {
             get {
-                coreConfigCache.object(forKey: Keys.shouldShowContentInWelsh) as? Bool ?? false
+                coreConfigCache.object(forKey: Keys.shouldShowContentInWelsh()) as? Bool ?? false
             }
             set {
-                coreConfigCache.setObject(newValue, forKey: Keys.shouldShowContentInWelsh)
+                coreConfigCache.setObject(newValue, forKey: Keys.shouldShowContentInWelsh())
                 if newValue && !shouldShowLanguageSwitcher {
                     shouldShowLanguageSwitcher = true
                 }
