@@ -5,6 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+- removed user hash from get/set LocalisationService `shouldShowLanguageSwitcher` and `shouldShowContentInWelsh`
 
 ## [2.8.7] - 2023-02-07Z
 ### Changed
