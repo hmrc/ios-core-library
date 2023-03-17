@@ -28,6 +28,16 @@ extension MobileCore.Localisation {
         case english = "English"
         case welsh = "Welsh"
     }
+
+    public enum Notifications: String {
+        case shouldShowLanguageSwitcher
+        case shouldShowContentInWelsh
+
+        public func callAsFunction() -> Notification.Name {
+            .init(self.rawValue)
+        }
+    }
+
     open class Service: LocalisationService, CoreConfigCacheInjected {
         private enum Keys: String {
             case shouldShowLanguageSwitcher = "shouldShowLanguageSwitcher"
@@ -42,7 +52,15 @@ extension MobileCore.Localisation {
             }
             set {
                 coreConfigCache.setObject(newValue, forKey: Keys.shouldShowLanguageSwitcher())
-                shouldShowContentInWelsh = newValue
+                NotificationCenter.default.post(
+                    name: MobileCore.Localisation.Notifications.shouldShowLanguageSwitcher(),
+                    object: nil
+                )
+
+                // Turn off Welsh when language switcher disabled
+                if !newValue && shouldShowContentInWelsh {
+                    shouldShowContentInWelsh = false
+                }
             }
         }
         open var shouldShowContentInWelsh: Bool {
@@ -51,6 +69,12 @@ extension MobileCore.Localisation {
             }
             set {
                 coreConfigCache.setObject(newValue, forKey: Keys.shouldShowContentInWelsh())
+                NotificationCenter.default.post(
+                    name: MobileCore.Localisation.Notifications.shouldShowContentInWelsh(),
+                    object: nil
+                )
+
+                // Turn on language switcher when Welsh enabled
                 if newValue && !shouldShowLanguageSwitcher {
                     shouldShowLanguageSwitcher = true
                 }
