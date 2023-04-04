@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Changed
+- made ShutteredModel Equatable to compare `default` in main app
 
 ## [2.9.0] - 2023-03-17Z
 ### Added
