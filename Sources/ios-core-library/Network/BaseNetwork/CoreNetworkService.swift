@@ -60,7 +60,7 @@ open class APIService: CoreNetworkServiceInjected {
 }
 
 extension MobileCore.Network {
-    public struct ShutteredModel: Decodable {
+    public struct ShutteredModel: Decodable, Equatable {
         public let title: String
         public let message: String
 
