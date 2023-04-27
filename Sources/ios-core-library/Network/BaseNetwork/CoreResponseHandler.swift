@@ -59,6 +59,8 @@ extension MobileCore.Network {
                     throw self.handle404(request: request, response: response)
                 case 423:
                     throw self.handle423(request: request, response: response)
+                case 429:
+                    throw self.handle429(request: request, response: response)
                 case 400..<500:
                     throw self.handle4XX(request: request, response: response, error: error)
                 case 503:
@@ -105,6 +107,10 @@ extension MobileCore.Network {
 
         open func handle423(request: MobileCore.HTTP.RequestBuilder, response: MobileCore.HTTP.Response) -> ServiceError {
             return .mci
+        }
+
+        open func handle429(request: MobileCore.HTTP.RequestBuilder, response: MobileCore.HTTP.Response) -> ServiceError {
+            return .rateLimited
         }
 
         open func handle410(request: MobileCore.HTTP.RequestBuilder, response: MobileCore.HTTP.Response) -> ServiceError {

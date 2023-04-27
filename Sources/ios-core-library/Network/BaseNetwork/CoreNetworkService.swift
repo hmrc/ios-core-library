@@ -74,6 +74,7 @@ extension MobileCore.Network {
     }
 
     public enum ServiceError: Error, CaseIterable {
+        case rateLimited
         case mci
         case logout
         case retryable(error: Error)
@@ -85,7 +86,8 @@ extension MobileCore.Network {
         case internetConnectivityIssue(error: Error)
 
         public static var allCases: [ServiceError] {
-            return [mci,
+            return [rateLimited,
+                    mci,
                     logout,
                     retryable(error: NSError()),
                     notFound,
