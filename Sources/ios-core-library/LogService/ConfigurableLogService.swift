@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import Foundation
+
 public struct Log {
     private static var configurableLogService = ConfigurableLogService()
 
@@ -27,6 +29,10 @@ public struct Log {
             servicesToUse.append(ConsoleLogService())
         }
         configurableLogService.add(services: servicesToUse)
+    }
+
+    public static func error(error: Error) {
+        configurableLogService.error(error: error)
     }
 
     public static func nonFatal(error: Error) {
@@ -61,9 +67,27 @@ class ConfigurableLogService: LogService {
         }
     }
 
+    func error(error: Error) {
+        logServices.forEach {
+            $0.error(error: error)
+        }
+    }
+
     func debug(log: String) {
         logServices.forEach {
             $0.debug(log: log)
         }
+    }
+}
+
+public extension Error {
+    var logDescription: String {
+        let error = self as NSError
+        var logMessage = error.localizedDescription
+        logMessage += " Code: \(error.code)\n"
+        if let message = error.userInfo["message"] as? String {
+            logMessage += message
+        }
+        return logMessage
     }
 }

@@ -28,8 +28,12 @@ public class BackgroundDataPoster: VoidDataPoster<MobileCore.Network.ServiceErro
                               _ handler: @escaping ((Result<Void, MobileCore.Network.ServiceError>) -> Void)) {
         coreNetworkService.data(request: request, sessionType: .background) { [weak self] networkResult in
             guard let self = self else {
-                Log.nonFatal(error: NSError(domain: "self is nil in BackgroundDataPoster callback",
-                                                code: 0))
+                Log.nonFatal(
+                    error: NSError(
+                        domain: "self is nil in BackgroundDataPoster callback",
+                        code: 0
+                    )
+                )
                 return
             }
             handler(self.resultTransformer.transform(networkResult: networkResult))

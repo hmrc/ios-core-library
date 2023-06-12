@@ -17,7 +17,8 @@
 import Foundation
 
 public protocol LogService {
-    func nonFatal(error: Error)
-    func info(message: String)
     func debug(log: String)
+    func info(message: String)
+    func error(error: Error)
+    func nonFatal(error: Error)
 }
