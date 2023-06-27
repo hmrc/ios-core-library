@@ -28,8 +28,12 @@ public class NonErrorTransformingDataPoster: VoidDataPoster<MobileCore.Network.S
                               _ handler: @escaping ((Result<Void, MobileCore.Network.ServiceError>) -> Void)) {
         coreNetworkService.data(request: request) { [weak self] networkResult in
             guard let self = self else {
-                Log.nonFatal(error: NSError(domain: "self is nil in NonErrorTransformingDataPoster callback",
-                                                code: 0))
+                Log.nonFatal(
+                    error: NSError(
+                        domain: "self is nil in NonErrorTransformingDataPoster callback",
+                        code: 0
+                    )
+                )
                 return
             }
             handler(self.resultTransformer.transform(networkResult: networkResult))

@@ -25,6 +25,10 @@ class ConsoleLogService: LogService {
         self.logInfo(message: message)
     }
 
+    func error(error: Error) {
+        self.logError(error: error)
+    }
+
     func debug(log: String) {
         self.logDebug(log: log)
     }
@@ -32,11 +36,15 @@ class ConsoleLogService: LogService {
 
 private extension ConsoleLogService {
     func logNonFatal(error: Error) {
-        printOrLog("***** LOG FAULT:\n\(error.localizedDescription)")
+        printOrLog("***** LOG FAULT:\n\(error.logDescription)")
     }
 
     func logInfo(message: String) {
         printOrLog("***** LOG INFO:\n\(message)")
+    }
+
+    func logError(error: Error) {
+        printOrLog("***** LOG ERROR:\n\(error.logDescription)")
     }
 
     func logDebug(log: String) {
