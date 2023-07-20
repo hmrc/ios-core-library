@@ -6,7 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
-- Added `Log.error` for logging errors, that do not warrant a non fatal to be thrown. 
+- Added `mediumDateBritishTimeZoneFormatter`
+- Added `Log.error` for logging errors, that do not warrant a non fatal to be thrown.
 
 ## [2.10.0] - 2023-04-27Z
 ### Changed
