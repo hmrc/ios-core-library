@@ -30,6 +30,7 @@ public protocol DateService {
     var longDateFormatter: Foundation.DateFormatter { get }
     var longDateBritishTimeZoneFormatter: Foundation.DateFormatter { get }
     var longDateUTCDateFormatter: Foundation.DateFormatter { get }
+    var mediumDateBritishTimeZoneFormatter: Foundation.DateFormatter { get }
     var timeFormatter: Foundation.DateFormatter { get }
     var relativeDateFormatter: Foundation.DateFormatter { get }
     var isoDateFormatter: Foundation.DateFormatter { get }
@@ -139,6 +140,16 @@ extension MobileCore.Date {
             formatter.timeStyle = .none
             formatter.locale = currentLocale
             formatter.timeZone = TimeZone(secondsFromGMT: 0)
+            return formatter
+        }
+
+        /// Medium-style date formatter (eg. "15 Sep 2015"), using British time zone
+        open var mediumDateBritishTimeZoneFormatter: Foundation.DateFormatter {
+            let formatter = Foundation.DateFormatter()
+            formatter.dateStyle = .medium
+            formatter.timeStyle = .none
+            formatter.locale = currentLocale
+            formatter.timeZone = Constants.BritishTimeZone
             return formatter
         }
 
