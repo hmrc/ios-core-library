@@ -216,7 +216,7 @@ extension MobileCore.Date {
         // Long month and year formatter
         open var longMonthAndYearDateFormatter: Foundation.DateFormatter {
             let formatter = Foundation.DateFormatter()
-            formatter.locale = Constants.USPosixLocale
+            formatter.locale = currentLocale
             formatter.timeZone = TimeZone(secondsFromGMT: 0)
             // "January 2018"
             formatter.dateFormat = "MMMM yyyy"
