@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [2.10.3] - 2023-09-11Z
 ### Changed
 - Added localisation to `longMonthAndYearDateFormatter` 
 
