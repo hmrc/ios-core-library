@@ -15,10 +15,10 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 ## iOS
 
-### ios tag_release
+### ios take_release
 
 ```sh
-[bundle exec] fastlane ios tag_release
+[bundle exec] fastlane ios take_release
 ```
 
 Create a new tagged release of the library.
