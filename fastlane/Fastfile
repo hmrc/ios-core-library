@@ -61,7 +61,7 @@ platform :ios do
     )
     # take tag and push to remote
     add_git_tag(tag: tag.to_string)
-    push_to_git_remote(setupstream: true)
+    push_to_git_remote(set_upstream: true)
     push_git_tags
     pr_url = create_pull_request(
       repo: "hmrc/ios-core-library",
