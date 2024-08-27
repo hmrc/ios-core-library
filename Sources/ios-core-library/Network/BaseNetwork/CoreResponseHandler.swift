@@ -16,7 +16,7 @@
 
 import Foundation
 
-public protocol CoreResponseHandler: class {
+public protocol CoreResponseHandler: AnyObject {
     func handle(request: MobileCore.HTTP.RequestBuilder,
                 response: MobileCore.HTTP.Response,
                 attempt: Int,
@@ -37,7 +37,7 @@ extension MobileCore.Network {
             self.auditDelegate = auditDelegate
             self.analyticsDelegate = analyticsDelegate
         }
-        
+
         // swiftlint:disable:next cyclomatic_complexity
         open func handle(request: MobileCore.HTTP.RequestBuilder,
                          response: MobileCore.HTTP.Response,
@@ -117,7 +117,7 @@ extension MobileCore.Network {
             return .deceased
         }
 
-        ///Shuttering for core (OLD needs to go)
+        /// Shuttering for core (OLD needs to go)
         open func handle503(request: MobileCore.HTTP.RequestBuilder, response: MobileCore.HTTP.Response) -> ServiceError {
             let shutteringError = ServiceError.shuttered(ShutteredModel(
                     title: "Sorry, there is a problem with the service", message: "Try again later."))
@@ -143,7 +143,12 @@ extension MobileCore.Network {
             return .retryable(error: error)
         }
 
-        open func handleError(request: MobileCore.HTTP.RequestBuilder, response: MobileCore.HTTP.Response?, attempt: Int, error: NSError) -> ServiceError {
+        open func handleError(
+            request: MobileCore.HTTP.RequestBuilder,
+            response: MobileCore.HTTP.Response?,
+            attempt: Int,
+            error: NSError
+        ) -> ServiceError {
             switch error.domain {
             case "cfNetworkDomain", "NSURLErrorDomain":
                 return ServiceError.internetConnectivityIssue(error: error)
@@ -166,7 +171,7 @@ extension MobileCore.Network {
             )
         }
 
-        open  func trackAuditEventIfRequired(request: MobileCore.HTTP.RequestBuilder, data: Data, response: URLResponse) {
+        open func trackAuditEventIfRequired(request: MobileCore.HTTP.RequestBuilder, data: Data, response: URLResponse) {
             guard let auditDelegate = auditDelegate else {
                 Log.info(message: "No audit delegate setup! Call Network.configure(analyticsDelegate:, auditDelegate:)")
                 return

@@ -27,9 +27,9 @@ extension MobileCore.HTTP {
         public private(set) var url: URL!
         public private(set) var data: [String: Any]?
         public private(set) var headers: [String: String]?
-        ///Set to false to stop anti fraud headers being appended to request. Defaults to true
+        /// Set to false to stop anti fraud headers being appended to request. Defaults to true
         public var includeAntiFraudHeaders = true
-        ///A final chance to modify the request generated as result of call to build(_:)
+        /// A final chance to modify the request generated as result of call to build(_:)
         public var modifyRequest: ModifyNetworkRequest!
 
         public override init() {}
@@ -105,6 +105,7 @@ extension MobileCore.HTTP {
             handler(.useProtocolCachePolicy)
         }
 
+        // swiftlint:disable:next cyclomatic_complexity
         open func build(_ handler: @escaping (Result<URLRequest, Error>) -> Void ) {
             let url = modify(url: self.url)
             var request = URLRequest(url: url)
@@ -123,7 +124,7 @@ extension MobileCore.HTTP {
             customCachePolicy { cachePolicy in
                 request.cachePolicy = cachePolicy
             }
-            //Generate additional headers
+            // Generate additional headers
             self.additionalHeaders { [weak self] result in
                 guard let self = self else { return }
                 switch result {
@@ -157,7 +158,7 @@ extension MobileCore.HTTP {
                         handler(.failure(error))
                         return
                     }
-                    //let user code modify the request if they need
+                    // let user code modify the request if they need
                     if let modifyHandler = self.modifyRequest {
                         request = modifyHandler(request)
                     }

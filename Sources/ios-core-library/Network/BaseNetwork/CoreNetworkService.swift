@@ -39,15 +39,15 @@ public protocol Endpoint {
     var path: String { get }
 }
 
-public protocol NetworkServiceAuditDelegate: class {
+public protocol NetworkServiceAuditDelegate: AnyObject {
     func trackAuditEventIfRequired(request: MobileCore.HTTP.RequestBuilder, data: Data, response: URLResponse)
 }
 
-public protocol NetworkServiceAnalyticsDelegate: class {
+public protocol NetworkServiceAnalyticsDelegate: AnyObject {
     func trackAnalyticEvent(eventCategory: String, eventAction: String, eventLabel: String?, eventValue: NSNumber?)
 }
 
-public protocol NetworkServiceAuthenticationDelegate: class {
+public protocol NetworkServiceAuthenticationDelegate: AnyObject {
     func didReceive401() -> Bool
 }
 
@@ -109,16 +109,20 @@ extension MobileCore.Network {
 
         var pendingRequests = [MobileCore.HTTP.RequestBuilder]()
 
-        open func data(request: MobileCore.HTTP.RequestBuilder, sessionType: MobileCore.Network.SessionType, attempt: Int, _ handler: @escaping NetworkHandler) {
-            //need to store a ref to the builder as the build process is async and the method that called data(request:_:) will probably
-            //have fallen out of scope by the time this is called
+        open func data(
+            request: MobileCore.HTTP.RequestBuilder,
+            sessionType: MobileCore.Network.SessionType,
+            attempt: Int, _ handler: @escaping NetworkHandler
+        ) {
+            // need to store a ref to the builder as the build process is async and the method that called data(request:_:) will probably
+            // have fallen out of scope by the time this is called
             pendingRequests.append(request)
             request.build { [weak self] (result) in
                 guard let self = self else {
                     Log.info(message: "MobileCore data.request failed as self was nil in request.build closure")
                     return
                 }
-                //now the request has been built, we must remove it from pending requests
+                // now the request has been built, we must remove it from pending requests
                 if let index = self.pendingRequests.firstIndex(of: request) {
                     self.pendingRequests.remove(at: index)
                 }
@@ -133,7 +137,12 @@ extension MobileCore.Network {
                                 case let .success(response):
                                     self.responseHandler.handle(request: request, response: response, attempt: attempt, handler)
                                 case let .failure(error):
-                                    let error = self.responseHandler.handleError(request: request, response: nil, attempt: attempt, error: error as NSError)
+                                    let error = self.responseHandler.handleError(
+                                        request: request,
+                                        response: nil,
+                                        attempt: attempt,
+                                        error: error as NSError
+                                    )
                                     handler(.failure(error))
                                 }
                             }
@@ -145,7 +154,7 @@ extension MobileCore.Network {
                 }
             }
         }
-        
+
         open func data(
                 request: MobileCore.HTTP.RequestBuilder,
                 sessionType: MobileCore.Network.SessionType,

@@ -16,7 +16,7 @@
 
 import Foundation
 
-///Prints the prefix, followed by the description of self + its memory address
+/// Prints the prefix, followed by the description of self + its memory address
 public func log(object: AnyObject, prefix: String) {
     #if DEBUG || ADHOC || LOCAL_DEVICE || LOCAL_SIMULATOR
     Log.debug(log: objectToString(object, prefix: prefix))
@@ -25,7 +25,7 @@ public func log(object: AnyObject, prefix: String) {
 
 #if DEBUG || ADHOC || LOCAL_DEVICE || LOCAL_SIMULATOR
 
-///Prints the prefix, followed by the description of obj + its memory address
+/// Prints the prefix, followed by the description of obj + its memory address
 public func objectToString(_ object: AnyObject, prefix: String) -> String {
     let address = MemoryAddress(of: object)
     return "\(prefix) \(object)<\(address)"

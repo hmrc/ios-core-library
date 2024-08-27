@@ -26,14 +26,14 @@ class JourneyServiceTests: CoreUnitTestCase {
     var userDefaultsKey = ""
 
     override func createMockJourneyService() -> MockJourneyService? {
-        //we dont want to mock the journey service as its the SUT
+        // we dont want to mock the journey service as its the SUT
         return nil
     }
     var userDefaults: UserDefaults!
     override func setUp() {
         super.setUp()
         userDefaults = .init()
-        
+
         service = MobileCore.Injection.Service.journey.injectedObject() as JourneyService
         service.set(id: initialJourneyId)
         userDefaultsKey = service.storageKey(eventName: eventName, description: description)

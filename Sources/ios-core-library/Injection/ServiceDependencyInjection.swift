@@ -17,11 +17,11 @@
 import Foundation
 import PINCache
 
-//Copy and paste boiler plate
-//protocol <#ProtocolName#>Injected {}
-//extension <#ProtocolName#>Injected {
+// Copy and paste boiler plate
+// protocol <#ProtocolName#>Injected {}
+// extension <#ProtocolName#>Injected {
 //    var <#injectedName#>: <#ProtocolName#> { return MobileCore.Injection.Service.<#SomePath#>.injectedObject() }
-//}
+// }
 
 public protocol JourneyServiceInjected {}
 extension JourneyServiceInjected {
@@ -94,7 +94,7 @@ extension LocalisationServiceInjected {
 }
 
 extension MobileCore.Injection {
-    //public static let <#name#> = Injector { return MobileCore.<#Real Class#>.Service() }
+    // public static let <#name#> = Injector { return MobileCore.<#Real Class#>.Service() }
 
     public struct Service {
         public static let http = Injector("HTTPService") { MobileCore.HTTP.Service() }
