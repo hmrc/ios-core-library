@@ -239,7 +239,7 @@ class RequestBuilderTests: CoreUnitTestCase {
                     XCTFail("No query components")
                     return
                 }
-                let dict = Dictionary(uniqueKeysWithValues: components.map{ ($0.name, $0.value) })
+                let dict = Dictionary(uniqueKeysWithValues: components.map { ($0.name, $0.value) })
                 XCTAssertEqual(dict[name], value)
                 expect.fulfill()
             case .failure:
@@ -281,7 +281,7 @@ class RequestBuilderTests: CoreUnitTestCase {
                     XCTFail("No query components")
                     return
                 }
-                let dict = Dictionary(uniqueKeysWithValues: components.map{ ($0.name, $0.value) })
+                let dict = Dictionary(uniqueKeysWithValues: components.map { ($0.name, $0.value) })
                 XCTAssertEqual(dict["name"], name)
                 XCTAssertEqual(dict["value"], value)
                 expect.fulfill()

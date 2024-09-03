@@ -1,43 +1,42 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "DeviceKit",
-        "repositoryURL": "https://github.com/devicekit/DeviceKit.git",
-        "state": {
-          "branch": null,
-          "revision": "4691cd16d6d56d94b8fac529d5abd0fd2d07daba",
-          "version": "4.1.0"
-        }
-      },
-      {
-        "package": "PINCache",
-        "repositoryURL": "https://github.com/pinterest/PINCache",
-        "state": {
-          "branch": null,
-          "revision": "875c654984fb52b47ca65ae70d24852b0003ccd9",
-          "version": "3.0.3"
-        }
-      },
-      {
-        "package": "PINOperation",
-        "repositoryURL": "https://github.com/pinterest/PINOperation.git",
-        "state": {
-          "branch": null,
-          "revision": "44d8ca154a4e75a028a5548c31ff3a53b90cef15",
-          "version": "1.2.1"
-        }
-      },
-      {
-        "package": "TrustKit",
-        "repositoryURL": "https://github.com/datatheorem/TrustKit.git",
-        "state": {
-          "branch": null,
-          "revision": "3c953558d61fdd9b136d981764e3242bd92b2648",
-          "version": "1.7.0"
-        }
+  "originHash" : "4ed483a816be9c9c234761134a8feb05857eff4fc14dad4bc9eaacfdc964f48d",
+  "pins" : [
+    {
+      "identity" : "devicekit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/devicekit/DeviceKit.git",
+      "state" : {
+        "revision" : "5757447e9f92c476ee2ca41ead7eb6db07936430",
+        "version" : "5.4.0"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "pincache",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pinterest/PINCache",
+      "state" : {
+        "revision" : "2fb85948463292c2e824148cf17dc62a4c217a94",
+        "version" : "3.0.4"
+      }
+    },
+    {
+      "identity" : "pinoperation",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pinterest/PINOperation.git",
+      "state" : {
+        "revision" : "a74f978733bdaf982758bfa23d70a189f4b4c1b6",
+        "version" : "1.2.3"
+      }
+    },
+    {
+      "identity" : "trustkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/datatheorem/TrustKit.git",
+      "state" : {
+        "revision" : "2fb6ce731fd51f745f6cc3393462865b95c3df3c",
+        "version" : "3.0.4"
+      }
+    }
+  ],
+  "version" : 3
 }

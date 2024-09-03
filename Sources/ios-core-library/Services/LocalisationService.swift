@@ -40,8 +40,8 @@ extension MobileCore.Localisation {
 
     open class Service: LocalisationService, CoreConfigCacheInjected {
         private enum Keys: String {
-            case shouldShowLanguageSwitcher = "shouldShowLanguageSwitcher"
-            case shouldShowContentInWelsh = "shouldShowContentInWelsh"
+            case shouldShowLanguageSwitcher
+            case shouldShowContentInWelsh
             func callAsFunction() -> String {
                 rawValue
             }

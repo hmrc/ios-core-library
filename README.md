@@ -22,6 +22,19 @@ Library for sharing lower level business code between various cross-gov applicat
 https://github.com/hmrc/ios-core-library
 ```
 
+This repo uses [pre-commit](https://pre-commit.com/) to run a set of commands prior to committing. This is configured via the `.pre-commit-config.yaml`.
+To install pre commit run
+
+```
+brew install pre-commit
+```
+
+Once installed you need to install the hook;
+
+```
+pre-commit install
+```
+
 # Usage
 Check the [wiki](https://github.com/hmrc/ios-core-library/wiki) with a breakdown on the different helpers avaliable within this library
 

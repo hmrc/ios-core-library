@@ -261,7 +261,7 @@ class CoreNetworkServiceTests: CoreUnitTestCase {
                 XCTFail("Returned an unexpected type of error")
                 return
             }
-            
+
             switch serviceError {
             case .shuttered:
                 break
@@ -270,7 +270,7 @@ class CoreNetworkServiceTests: CoreUnitTestCase {
             }
         }
     }
-    
+
     func test_523FromServiceIsTreatedAsShuttered() {
         assertWhenRequestMade(
         result: 523,
@@ -290,7 +290,7 @@ class CoreNetworkServiceTests: CoreUnitTestCase {
                 XCTFail("Returned an unexpected type of error")
                 return
             }
-            
+
             switch serviceError {
             case .shuttered:
                 break

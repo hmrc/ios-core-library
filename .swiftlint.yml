@@ -1,5 +1,7 @@
 disabled_rules:
   - nesting # If this can be configured in the future to a depth of 2 then remove this
+  - discouraged_direct_init
+  - trailing_whitespace
 
 opt_in_rules: # some rules are only opt-in
   - empty_count
@@ -11,6 +13,7 @@ opt_in_rules: # some rules are only opt-in
 # #   - Source
 excluded: # paths to ignore during linting. Takes precedence over `included`.
   - Carthage
+  - Tests
 #   - Source/ExcludedFolder
 #   - Source/ExcludedFile.swift
 
@@ -30,13 +33,14 @@ warning_threshold: 2
 
 # Set doesn't have isEmpty so using count seems to be our ownly option
 empty_count: warning
-line_length: 
-   warning: 145 
+line_length:
+   warning: 145
    ignores_comments: true
+non_optional_string_data_conversion: error
 
 function_body_length:
-  warning: 50
-  error: 70
+  warning: 70
+  error: 100
 type_body_length:
   - 300 # warning
   - 500 # error
@@ -66,10 +70,10 @@ large_tuple: 4
 reporter: "xcode" # reporter type (xcode, json, csv, checkstyle)
 function_parameter_count: 7
 
-custom_rules:
-  long_inits:
-    included: ".*\\.swift"
-    name: "Long Inits"
-    regex: "(?<!super|self)\\.init\\("
-    message: "Long inits are pointless, yo"
-    severity: error
+# custom_rules:
+#   long_inits:
+#     included: ".*\\.swift"
+#     name: "Long Inits"
+#     regex: "(?<!super|self)\\.init\\("
+#     message: "Long inits are pointless, yo"
+#     severity: error

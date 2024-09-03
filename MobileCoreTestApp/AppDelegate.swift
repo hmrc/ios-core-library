@@ -24,9 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        //Minimal configuration for MobileCore library
+        // Minimal configuration for MobileCore library
         MobileCore.Injection.initialised = {
-            //configure injected dependencies here to make sure they are configured in case Injection is reset
+            // configure injected dependencies here to make sure they are configured in case Injection is reset
             MobileCore.Network.configure(analyticsDelegate: ExampleNetworkAnalyticsDelegate(), auditDelegate: ExampleNetworkAuditDelegate())
         }
         MobileCore.config = MobileCore.Configuration(

@@ -39,7 +39,7 @@ extension MobileCore {
 
         /**
          Initialize a new instance of KeychainAccess given a unique account identifier
-         
+
          - parameter account: the account for which the keys will be appended in the keychain
          */
         public init(account: String) {
@@ -48,7 +48,7 @@ extension MobileCore {
 
         /**
          Retrieve a string for the given key.
-         
+
          - parameter key: the key to find the string in the keychain
          - returns: the value stored for that key as a string. nil if there is no value or the value is not a string
          */
@@ -61,7 +61,7 @@ extension MobileCore {
 
         /**
          Retrieve data for the given key.
-         
+
          - parameter key: the key to find the data in the keychain
          - returns: the value stored for that key as NSData. nil if there is no value or the value is not NSData
          */
@@ -89,7 +89,7 @@ extension MobileCore {
 
         /**
          Set a string for the given key.
-         
+
          - parameter key: the key to store the string for in the keychain
          - parameter value: the string to store in the keychain (if nil then no data will be stored for the key)
          - returns: true if the store was successful, false if there was an error
@@ -100,7 +100,7 @@ extension MobileCore {
 
         /**
          Set data for the given key.
-         
+
          - parameter key: the key to store the data for in the keychain
          - parameter value: the data to store in the keychain (if nil then no data will be stored for the key)
          - returns: true if the store was successful, false if there was an error
@@ -144,7 +144,7 @@ extension MobileCore {
                     return true
                 }
                 Log.debug(
-                    //swiftlint:disable:next line_length
+                    // swiftlint:disable:next line_length
                     log: "Failed to add data to keychain with status=\(status). Attempted to add data [\(String(describing: data))] for key [\(key)]"
                 )
                 return false
@@ -158,7 +158,7 @@ extension MobileCore {
 
         /**
          Delete the data for the given key.
-         
+
          - parameter key: the key to delete the data for in the keychain
          - returns: true if the delete was successful, false if there was an error
          */
@@ -176,7 +176,7 @@ extension MobileCore {
 
         /**
          Delete all keys and data for the app.
-         
+
          - returns: true if the delete was successful, false if there was an error
          */
         open func deleteAllKeysAndDataForApp() -> Bool {
@@ -215,7 +215,7 @@ extension MobileCore {
         // MARK: Private
         /**
          Set up the query for use with the keychain functions.
-         
+
          - parameter key: the key to use for searching or saving
          - parameter value: the data to store in the keychain
          - parameter get: the query is for retrieving data and should have the parameters to do that

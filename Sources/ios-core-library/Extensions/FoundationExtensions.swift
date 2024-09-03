@@ -75,9 +75,9 @@ extension String {
 
     /**
        Extract the initial substring up to the index.
-     
+
        - parameter index: The index of the character to cut the string off at
-     
+
        - returns: The string up to the specified index.
     */
     public func substringToIndex(_ index: Int) -> String {
@@ -90,11 +90,11 @@ extension String {
     /**
         Inserts a string into an existing one and returns the resulting string
         after the insert is performed.
-        
+
         - parameter toInsert: The string to insert
         - parameter existingString: A string which `toInsert` will be injected in
         - parameter range: The location data of where `toInsert` will be injected into `existingString`
-        
+
         - returns: The result string after the insert is performed
     */
     public static func insertString(_ toInsert: String,
@@ -108,14 +108,14 @@ extension String {
     }
 
     /**
-        Create a Swift-style Range from an NSRange (which is provided from 
+        Create a Swift-style Range from an NSRange (which is provided from
         UITextField delegate methods).
     */
     public func rangeFromNSRange(_ nsRange: NSRange) -> Range<String.Index>? {
         guard let from16 = utf16.index(utf16.startIndex, offsetBy: nsRange.location, limitedBy: utf16.endIndex),
             let to16 = utf16.index(from16, offsetBy: nsRange.length, limitedBy: utf16.endIndex) else { return nil }
         if let from = String.Index(from16, within: self),
-            let to = String.Index(to16, within: self) { //swiftlint:disable:this identifier_name
+            let to = String.Index(to16, within: self) { // swiftlint:disable:this identifier_name
             return from ..< to
         }
         return nil
@@ -123,12 +123,12 @@ extension String {
 
     /**
         Creates a string with a specified separator every group of characters.
-        Eg. Given string: "111122223333", if separator: "-" and groupSize: "4" 
+        Eg. Given string: "111122223333", if separator: "-" and groupSize: "4"
         were specified, the resulting string would be: "1111-2222-3333"
-        
+
         - parameter separator: The separator to use for each subgroup of substrings
         - parameter groupSize: The size of the "group" of substrings to be separated by the separator
-        
+
         - returns: A formatted string of separated subgroups as specified
     */
     public func stringByAddingSeparator(_ separator: String, usingGrouping groupSize: Int) -> String {
@@ -147,10 +147,10 @@ extension String {
     /**
         Creates a new string by inserting a specified string using the provided
         range data
-        
+
         - parameter string: The string to inject
         - parameter range: Range data that will dictate the position in the string the injection will occur
-        
+
         - returns: The resulting string after the injection
     */
     public func stringByInsertingString(_ string: String, withRange range: Range<String.Index>) -> String {
@@ -161,11 +161,11 @@ extension String {
     }
 
     /**
-        Removes all characters from the string that are not part of the 
+        Removes all characters from the string that are not part of the
         specified character set.
-        
+
         - parameter characterSet: The set of characters that are allowed
-        
+
         - returns: A string that contains only the characters from the specified character set
     */
     public func stringWithOnlyCharactersFromSet(_ characterSet: CharacterSet) -> String {
@@ -174,11 +174,11 @@ extension String {
     }
 
     /**
-        Checks if the string contains characters that aren't part of the 
+        Checks if the string contains characters that aren't part of the
         specified (allowed) set.
-        
+
         - parameter characterSet: The set of characters that are allowed
-        
+
         - returns: True if the original string contains unwanted characters, false otherwise
     */
     public func containsCharactersNotInSet(_ characterSet: CharacterSet) -> Bool {
@@ -222,7 +222,7 @@ extension String {
 
     /**
         Checks to see if the string matches the provided RegEx
-     
+
          - parameter regex: The regular expression to use for matching
          - paramter caseSensitive: Should the regex match consider character casing?
 

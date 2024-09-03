@@ -166,7 +166,7 @@
 		OBJ_77 /* JourneyServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyServiceTests.swift; sourceTree = "<group>"; };
 		OBJ_78 /* NetworkSessionConfigurationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionConfigurationServiceTests.swift; sourceTree = "<group>"; };
 		OBJ_9 /* MobileCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MobileCore.h; sourceTree = "<group>"; };
-		"ios-core-library::ios-core-library::Product" /* ios_core_library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ios_core_library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"ios-core-library::ios-core-library::Product" /* ios_core_library.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ios_core_library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"ios-core-library::ios-core-libraryTests::Product" /* ios-core-libraryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = "ios-core-libraryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -189,7 +189,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		OBJ_11 /* Extentions */ = {
+		OBJ_11 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				OBJ_12 /* Enum+CaseCountable.swift */,
@@ -199,7 +199,7 @@
 				OBJ_16 /* URL+QueryString.swift */,
 				58F0DBC12758FD9D008ECD4F /* RangeReplaceableCollection+HMRC.swift */,
 			);
-			path = Extentions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		OBJ_120 /* Products */ = {
@@ -402,7 +402,7 @@
 			children = (
 				OBJ_9 /* MobileCore.h */,
 				OBJ_10 /* Configuration.swift */,
-				OBJ_11 /* Extentions */,
+				OBJ_11 /* Extensions */,
 				OBJ_18 /* Helpers */,
 				OBJ_21 /* Injection */,
 				OBJ_24 /* KeychainAccess.swift */,
