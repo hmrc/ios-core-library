@@ -63,10 +63,14 @@ extension MobileCore.Network {
     public struct ShutteredModel: Decodable, Equatable {
         public let title: String
         public let message: String
+        public let titleCy: String?
+        public let messageCy: String?
 
-        public init(title: String, message: String) {
+        public init(title: String, message: String, titleCy: String? = nil, messageCy: String? = nil) {
             self.title = title
             self.message = message
+            self.titleCy = titleCy
+            self.messageCy = messageCy
         }
 
         public static let `default` =
