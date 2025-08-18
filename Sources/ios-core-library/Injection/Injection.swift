@@ -40,8 +40,8 @@ extension MobileCore.Injection {
 
         private var createStandard: Create!
         let loggingEnabled = true
-        public private (set)var logsInjection = true
-        public private (set)var isSingleton = true
+        public private(set)var logsInjection = true
+        public private(set)var isSingleton = true
 
         private var _obj: Any!
 
