@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+- Added Dealt with welesh langauage API parameters for shuttering API
+
 ## [2.12.0] - 2024-09-03Z
 - Dealt with warnings in preparation for Swift 6 and updated dependencies
 

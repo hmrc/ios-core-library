@@ -131,7 +131,10 @@ extension MobileCore.Network {
                 let defaultMessage = ShutteredModel.default.message
                 let title = model.title.isEmpty ? defaultTitle : model.title
                 let message = model.message.isEmpty ? defaultMessage : model.message
-                model = ShutteredModel(title: title, message: message)
+                // Keep Welsh values if present, otherwise leave nil
+                let titleCy = model.titleCy?.isEmpty == true ? title : model.titleCy
+                let messageCy = model.messageCy?.isEmpty == true ? message : model.messageCy
+                model = ShutteredModel(title: title, message: message, titleCy: titleCy, messageCy: messageCy)
                 let shutteringError = ServiceError.shuttered(model)
                 return shutteringError
             } catch {
