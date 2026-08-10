@@ -9,6 +9,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Added Dealt with welesh langauage API parameters for shuttering API
 
+### Removed
+- Removed the TrustKit dependency and with it all certificate pinning support:
+  `CertificatePinningService`, `MobileCore.HTTP.CertificatePinning`,
+  `CertificatePinning.Model`, `CertificatePinningInjected` and
+  `MobileCore.Injection.Service.certificatePinning`. `HTTPService` no longer handles
+  server-trust challenges; URLSession default handling applies. **Breaking change** —
+  apps calling `enableCertificatePinning(using:)` must remove those calls.
+
 ## [2.12.0] - 2024-09-03Z
 - Dealt with warnings in preparation for Swift 6 and updated dependencies
 

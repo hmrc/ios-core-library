@@ -15,7 +15,6 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/devicekit/DeviceKit.git", exact: "5.4.0"),
-        .package(url: "https://github.com/datatheorem/TrustKit.git", from: "3.0.4"),
         .package(url: "https://github.com/pinterest/PINCache", from: "3.0.4")
     ],
     targets: [
@@ -23,7 +22,7 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "ios-core-library",
-            dependencies: ["DeviceKit", "TrustKit", "PINCache"]
+            dependencies: ["DeviceKit", "PINCache"]
         ),
         .testTarget(
             name: "ios-core-libraryTests",
