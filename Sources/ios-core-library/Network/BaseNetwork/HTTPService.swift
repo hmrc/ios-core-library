@@ -57,7 +57,7 @@ extension MobileCore.HTTP {
         case delete
     }
 
-    open class Service: NSObject, CoreHTTPService, URLSessionDelegate, CertificatePinningInjected {
+    open class Service: NSObject, CoreHTTPService, URLSessionDelegate {
 
         public let sessionService = MobileCore.Network.SessionConfigurationService()
 
@@ -112,14 +112,6 @@ extension MobileCore.HTTP {
             urlSession.getAllTasks { (tasks) in
                 tasks.forEach { $0.cancel() }
             }
-        }
-
-        public func urlSession(
-                _ session: URLSession,
-                didReceive challenge: URLAuthenticationChallenge,
-                completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?)
-                -> Void) {
-            certificatePinningService.validate(challenge: challenge, completionHandler: completionHandler)
         }
 
         public func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
