@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [3.0.0] - 2026-08-13Z
+
 ### Removed
 - Removed the TrustKit dependency and with it all certificate pinning support:
   `CertificatePinningService`, `MobileCore.HTTP.CertificatePinning`,
