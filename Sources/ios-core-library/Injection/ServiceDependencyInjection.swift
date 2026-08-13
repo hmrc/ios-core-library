@@ -78,11 +78,6 @@ extension NetworkSpinnerPolicyInjected {
     public var networkSpinnerPolicy: NetworkSpinnerPolicy { MobileCore.Injection.Service.networkSpinnerPolicy.injectedObject() }
 }
 
-public protocol CertificatePinningInjected {}
-extension CertificatePinningInjected {
-    public var certificatePinningService: CertificatePinningService { MobileCore.Injection.Service.certificatePinning.injectedObject() }
-}
-
 public protocol CoreConfigCacheInjected {}
 extension CoreConfigCacheInjected {
     public var coreConfigCache: PINCache { MobileCore.Injection.Service.coreConfig.injectedObject() }
@@ -108,7 +103,6 @@ extension MobileCore.Injection {
         public static let fraudPrevention = Injector("FraudPreventionService") { MobileCore.FraudPrevention.Service() }
         public static let networkSpinner = Injector("HTTPService") { MobileCore.Network.Spinner.Empty() }
         public static let networkSpinnerPolicy = Injector("NetworkSpinnerService") { MobileCore.Network.Spinner.Policy() }
-        public static let certificatePinning = Injector("CertificatePinningService") { MobileCore.HTTP.CertificatePinning() }
         public static let coreConfig = Injector("CoreConfigCache") {
             return PINCache(name: "CoreConfigCache", rootPath: StoragePath.permanent)
         }

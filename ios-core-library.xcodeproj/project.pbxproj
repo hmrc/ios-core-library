@@ -41,7 +41,6 @@
 		OBJ_207 /* MobileCoreInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_29 /* MobileCoreInfo.swift */; };
 		OBJ_208 /* Namespaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* Namespaces.swift */; };
 		OBJ_209 /* BaseNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* BaseNetworkService.swift */; };
-		OBJ_210 /* CertificatePinningService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* CertificatePinningService.swift */; };
 		OBJ_211 /* CoreNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* CoreNetworkService.swift */; };
 		OBJ_212 /* HTTPRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* HTTPRequestBuilder.swift */; };
 		OBJ_213 /* HTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* HTTPService.swift */; };
@@ -128,7 +127,6 @@
 		OBJ_29 /* MobileCoreInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileCoreInfo.swift; sourceTree = "<group>"; };
 		OBJ_30 /* Namespaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Namespaces.swift; sourceTree = "<group>"; };
 		OBJ_33 /* BaseNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetworkService.swift; sourceTree = "<group>"; };
-		OBJ_34 /* CertificatePinningService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificatePinningService.swift; sourceTree = "<group>"; };
 		OBJ_35 /* CoreNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreNetworkService.swift; sourceTree = "<group>"; };
 		OBJ_36 /* HTTPRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestBuilder.swift; sourceTree = "<group>"; };
 		OBJ_37 /* HTTPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPService.swift; sourceTree = "<group>"; };
@@ -254,7 +252,6 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_33 /* BaseNetworkService.swift */,
-				OBJ_34 /* CertificatePinningService.swift */,
 				OBJ_35 /* CoreNetworkService.swift */,
 				OBJ_36 /* HTTPRequestBuilder.swift */,
 				OBJ_37 /* HTTPService.swift */,
@@ -505,7 +502,6 @@
 				OBJ_207 /* MobileCoreInfo.swift in Sources */,
 				OBJ_208 /* Namespaces.swift in Sources */,
 				OBJ_209 /* BaseNetworkService.swift in Sources */,
-				OBJ_210 /* CertificatePinningService.swift in Sources */,
 				5893321C27EA25900042B9EF /* LocalisationService.swift in Sources */,
 				OBJ_211 /* CoreNetworkService.swift in Sources */,
 				OBJ_212 /* HTTPRequestBuilder.swift in Sources */,
@@ -580,7 +576,6 @@
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/.build/checkouts/TrustKit/TrustKit/public",
 				);
 				INFOPLIST_FILE = "ios-core-library.xcodeproj/ios_core_library_Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -611,7 +606,6 @@
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/.build/checkouts/TrustKit/TrustKit/public",
 				);
 				INFOPLIST_FILE = "ios-core-library.xcodeproj/ios_core_library_Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -655,7 +649,6 @@
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/.build/checkouts/TrustKit/TrustKit/public",
 				);
 				INFOPLIST_FILE = "ios-core-library.xcodeproj/ios_core_libraryTests_Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -683,7 +676,6 @@
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/.build/checkouts/TrustKit/TrustKit/public",
 				);
 				INFOPLIST_FILE = "ios-core-library.xcodeproj/ios_core_libraryTests_Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
