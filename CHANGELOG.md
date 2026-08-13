@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [2.13.0] - 2025-08-19Z
+
 ### Added
 - Added Dealt with welesh langauage API parameters for shuttering API
 
